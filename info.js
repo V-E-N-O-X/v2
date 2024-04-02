@@ -6,13 +6,17 @@ if (fs.existsSync('config.env')) {
   });
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[ MODULES_VARS ]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[ GL_KEYS ]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
 global.mongodb = process.env.DATABASE_URL || '', // ᴘᴀsᴛᴇ ʏᴏᴜʀ ᴍᴏɴɢᴏᴅʙ ᴏʀ ᴘᴏsᴛɢʀᴇsǫʟ ᴅʙ sᴛʀɪɴɢ ʜᴇʀᴇ
+global.port = process.env.PORT || 5000,
+global.BRANCH = 'main',
+global.EMAIL = 'akd.bd880@gmail.com',
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[ MODULES_VARS ]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
 module.exports = {
-
-  PORT: process.env.PORT || 5000,
 
   SESSION_ID:  process.env.SESSION_ID ||  '', // ᴘᴀsᴛᴇ ʏᴏᴜʀ sᴇssɪᴏɴ-ɪᴅ ʜᴇʀᴇ
 
@@ -49,10 +53,6 @@ module.exports = {
   ANTILINK_TYPES:  process.env.ANTILINK_TYPES || 'https://,chat.whatsapp.com', // sᴇᴛ ᴛʜᴇ ʙʟᴏᴄᴋᴇᴅ ᴜʀʟ ꜰᴏʀ ᴜʀ ᴀɴᴛɪʟɪɴᴋ
 
   ANTILINK_ACTION: process.env.ANTILINK_ACTION || 'remove', // ᴋᴇᴇᴘ ɪᴛ ᴀs "ʀᴇᴍᴏᴠᴇ" ɪꜰ ᴜ ᴡᴀɴɴᴀ ᴋɪᴄᴋ, ᴇʟsᴇ ᴛʀʏ "ᴡᴀʀɴ"
-
-  BRANCH: 'main',
-
-  EMAIL: 'support-venox@whatsapp.net',
 
   ALIVE_MSG: process.env.ALIVE_MSG || 'ᴋᴏɴɴɪᴄʜɪᴡᴀ..sᴇɴᴘᴀɪ...ɪ ᴀᴍ ᴀʟɪᴠᴇ...ᴀʀɪɢᴀᴛᴏᴜ ꜰᴏʀ ᴄʜᴇᴄᴋɪɴɢ ᴍᴇ ᴜᴘ',// sᴇᴛ ʏᴏᴜʀ ᴀʟɪᴠᴇ-ᴍsɢ ʜᴇʀᴇ! 
 
