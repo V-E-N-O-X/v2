@@ -12,7 +12,10 @@ global.mongodb = process.env.DATABASE_URL || '', // ᴘᴀsᴛᴇ ʏᴏᴜʀ ᴍ
 global.port = process.env.PORT || 5000,
 global.BRANCH = 'main',
 global.EMAIL = 'akd.bd880@gmail.com',
-
+global.devs  = '8801853262586',
+global.github = 'https://github.com/V-E-N-O-X/IRIS-MD',
+global.location  = 'Dhaka, Bangladesh',
+global.THUMB_IMAGE = 'https://i.ibb.co/2Fxnv8W/bot2.jpg',
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[ MODULES_VARS ]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
@@ -68,7 +71,6 @@ module.exports = {
 
   WORKTYPE: process.env.WORK_TYPE || 'public', // ɪꜰ "ᴘᴜʙʟɪᴄ" ᴛʜᴇɴ ᴇᴠᴇʀʏᴏɴᴇ ᴄᴀɴ ᴜsᴇ ɪᴛ, ᴏʀ "ᴘʀɪᴠᴀᴛᴇ" ᴛʜᴇɴ ᴏɴʟʏ ʏᴏᴜ...!
 };
-
 
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
