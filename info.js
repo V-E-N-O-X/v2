@@ -6,8 +6,10 @@ if (fs.existsSync('config.env')) {
   });
 }
 
-
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[ MODULES_VARS ]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+global.mongodb = process.env.DATABASE_URL || '', // ᴘᴀsᴛᴇ ʏᴏᴜʀ ᴍᴏɴɢᴏᴅʙ ᴏʀ ᴘᴏsᴛɢʀᴇsǫʟ ᴅʙ sᴛʀɪɴɢ ʜᴇʀᴇ
+
 
 
 module.exports = {
@@ -15,8 +17,6 @@ module.exports = {
   PORT: process.env.PORT || 5000,
 
   SESSION_ID:  process.env.SESSION_ID ||  '', // ᴘᴀsᴛᴇ ʏᴏᴜʀ sᴇssɪᴏɴ-ɪᴅ ʜᴇʀᴇ
-
-  DATABASE_URL: process.env.DATABASE_URL || '', // ᴘᴀsᴛᴇ ʏᴏᴜʀ ᴍᴏɴɢᴏᴅʙ ᴏʀ ᴘᴏsᴛɢʀᴇsǫʟ ᴅʙ sᴛʀɪɴɢ ʜᴇʀᴇ
 
   SUDO: process.env.SUDO || '8801975492880', // sᴇᴛ ʏᴏᴜʀ sᴜᴅᴏ-ɴᴜᴍʙᴇʀ ꜰᴏʀ ʙᴏᴛ, sᴇᴘᴀʀᴀᴛᴇᴅ ʙʏ ᴄᴏᴍᴍᴀ (,)
 
