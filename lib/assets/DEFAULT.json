@@ -1,0 +1,57 @@
+
+{
+    "_JSON_": true,
+    "AUTHOR": "Venox-Senpai",
+    "LANGUAGE": "English",
+    "LANGCODE": "en",
+    "STRINGS": {
+        "updater": {
+            "UPDATE": "```Oh my, Seems like you're trying to update..\nBut there is no update available at this moment```",
+            "NEW_UPDATE": "```There is a new update available for the bot!```",
+            "UPDATED_LOCAL": "```Flashy updates are Done```"
+        },
+        "global": {
+            "botName": "```Iris-Botto```",
+ 
+            "body": "```A lightweight Baileys Bot``` 🍀",
+            "greet2" : "```Hey there..! User```",
+            "pic1": "https://i.ibb.co/2Fxnv8W/bot2.jpg",
+            "pic2": "https://i.ibb.co/2Fxnv8W/bot2.jpg",
+            "pic3": "https://i.ibb.co/2Fxnv8W/bot2.jpg",
+            "pic4": "https://i.ibb.co/2Fxnv8W/bot2.jpg",
+            "pic5": "https://i.ibb.co/2Fxnv8W/bot2.jpg",
+            "pic6": "https://i.ibb.co/2Fxnv8W/bot2.jpg",
+            "pic7": "https://i.ibb.co/2Fxnv8W/bot2.jpg",
+             "greet" : "```Konnichiwaa..! Senpai```",
+           "dotbody" : "```Yup.I am here.```",
+            "emijii" : "🍀",
+            "promote": "```User recieved Admin rank..!!```",
+            "pmallow": "```Hey There Buddy, This is Iris, A whatsapp userbot...The person you are currently trying to talk... is busy now...So don't i will send him a message about you```",
+            "pmblock": "```You are getting blocked for Spamming in the dm```",
+            "pmwarn": "```Hii, Stop!```\n```Please don't spam else I'll block you for spamming. You have ${checkPermit.times} warning(s)```",
+            "permited": "```Hey There ${tname}```\n\n```You're Now Permitted To Chat With My Owner In Pm```", 
+            "revoked" : "```Hey ${tname} Sir```\n\n```Your pm message permission has been prevoked now.```",
+            "demote": "```You are not Worthy Enough```",
+            "antlink": "```Link Detected.```\n```Good Bye Worthless Crap```",
+            "mention": "```Please mention any User```",
+            "title": "",
+            "footer": "```Copyright by Iris.inc```",
+            "by": "```Powered by Iris-bot``` 🍀",
+            "chat_desc": "```Options Avilable``` : \n1. ```mute```\n2. ```unmute```\n3. ```archive```\n4. ```unarchive```\n5. ```read```\n6. ```unread```\n7. ```delete```",
+            "success": "```Here You Go```",
+            "dot": "```Hey Buddy! Why don't you try meh .menu```",
+            "couple_male": "```I am lucky that i have you```",
+            "couple_female": "```Put everything in my soulders```",
+            "admin": "*ᴏɴʟʏ ᴀᴅᴍɪɴ* • ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ʙʏ ᴏɴʟʏ ɢʀᴏᴜᴘ ᴀᴅᴍɪɴs..!⚠",
+            "botAdmin": "*ʙᴏᴛ ᴀᴅᴍɪɴ* • ʙᴏᴛ ɴᴇᴇᴅs ᴛᴏ ʙᴇ ᴀᴅᴍɪɴ ғɪʀsᴛ..❗",
+            "owner": "*ᴏɴʟʏ ᴏᴡɴᴇʀ* • ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ᴏɴʟʏ ʙᴇ ᴜsᴇᴅ ʙʏ ᴛʜᴇ ᴏᴡɴᴇʀ ᴏꜰ ᴛʜᴇ ʙᴏᴛ..!⚠",
+            "group": "*ɢʀᴏᴜᴘ ᴄʜᴀᴛ* • ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ᴏɴʟʏ ʙᴇ ᴜsᴇᴅ ɪɴ ɢʀᴏᴜᴘ ᴄʜᴀᴛs..!⚠",
+            "private": "*ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ* • ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ᴏɴʟʏ ʙᴇ ᴜsᴇᴅ ɪɴ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛs..!⚠",
+            "bot": "*ᴏɴʟʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ* • ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ᴏɴʟʏ ʙᴇ ᴜsᴇᴅ ʙʏ ᴛʜᴇ ᴅᴇᴠᴇʟᴏᴘᴇʀ ᴏꜰ ᴛʜᴇ ʙᴏᴛ ᴏʀ ᴛʜᴇ ʙᴏᴛ ɴᴜᴍʙᴇʀ ɪᴛsᴇʟꜰ..!⚠",
+            "wait": "```ʟ ᴏ ᴀ ᴅ ɪ ɴ ɢ...```"
+        },
+        "error": {
+            "text": "```404 ᴇʀʀᴏʀ```"
+        }
+    }
+  }

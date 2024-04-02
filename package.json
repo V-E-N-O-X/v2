@@ -1,0 +1,81 @@
+{
+               "name": "iris-md",
+               "version": "2.0.9",
+               "description": "Simple lightweight whatsapp bot",
+               "main": "lib/client.js",
+               "type": "commonjs",
+               "license": "Apache-2.0",
+               "scripts": {
+                  "start": "pm2 start lib/client.js --deep-monitoring --attach --name IRIS-MD",
+                  "stop": "pm2 stop IRIS-MD"
+               },
+               "author": "Venox-Senpai",
+               "dependencies": {
+                       "@whiskeysockets/baileys": "^6.5.0",
+                       "@adiwajshing/keyed-db": "^0.2.4",
+                       "awesome-phonenumber": "^3.3.0",
+                       "anime-character-random": "latest",
+                       "axios": "^0.24.0",
+                       "cheerio": "^1.0.0-rc.10",
+                       "crypto-js":"latest",
+                       "chalk": "^4.1.2",
+                       "@hapi/boom": "^10.0.1",
+                       "child_process": "^1.0.2",
+                       "discord-mongoose-economy": "^1.2.0",
+                       "express": "^4.18.1",
+                       "fs-extra": "^10.1.0",
+                       "koyeb-api-client":"latest",
+                       "dotenv": "^16.0.0",
+                       "discord-xp": "^1.1.16",
+                       "mongoose": "^6.2.1",
+                       "mumaker": "latest",
+                       "google-it": "^1.6.4",
+                       "file-type": "^16.5.3",
+                       "form-data": "^4.0.0",
+                       "ffmpeg": "^0.0.4",
+                       "fluent-ffmpeg": "^2.1.2",
+                       "heroku-client": "3.1.0",
+                       "async-g-i-s": "^1.4.0",
+                       "human-readable": "^0.2.1",
+                       "jimp": "^0.16.1",
+                       "jsdom": "^16.4.0",
+                       "moment-timezone": "^0.5.34",
+                       "mailist": "^1.0.3",
+                       "openai": "3.0.0",
+                       "pm2": "^5.2.0",
+                       "node-cron": "^3.0.0",
+                       "node-fetch": "^2.6.1",
+                       "node-webpmux": "^3.1.0",
+                       "google-tts-api": "^2.0.2",
+                       "path": "^0.12.7",
+                       "request": "^2.88.2",
+                       "simple-git": "^3.15.1",
+                       "@shineiichijo/marika": "^2.0.3",           
+                       "translatte": "^3.0.1",
+                       "util": "^0.12.4",
+                       "@bochilteam/scraper": "latest",
+                       "secktor-pack": "latest",
+                       "ytdl-secktor": "latest",
+                       "pastebin-js": "latest",
+                       "fb-info-video":"^1.0.2",
+                       "wa-sticker-formatter": "^4.3.2"
+                      },
+                         "overrides": {
+                         "cache-manager": "5.2.2"
+                                      },
+                  "directories": {
+                       "lib": "lib",
+                       "assets": "lib/assets"
+                    },
+                  "devDependencies": {
+                       "pino": "^7.0.5"
+                    },
+                 "repository": {
+                 "type": "git",
+                 "url": "git+https://github.com/V-E-N-O-X/IRIS-MD.git"
+                  },
+                 "bugs": {
+                 "url": "https://github.com/V-E-N-O-X/IRIS-MD/issues"
+                  },
+                 "homepage": "https://github.com/V-E-N-O-X/IRIS-MD#readme"
+                  }
