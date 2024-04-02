@@ -46,7 +46,7 @@ module.exports = {
 
   DISABLE_PM:  process.env.DISABLE_PM || 'false', // ɪꜰ ᴜ sᴇᴛ ɪᴛ ᴀs ᴛʀᴜᴇ ʙᴏᴛ ᴡɪʟʟ ᴏɴʟʏ ᴡᴏʀᴋs ᴏɴ ɢʀᴏᴜᴘ ᴄʜᴀᴛs
 
-  LEVEL_UP_MESSAGE: process.env.LEVEL_UP_MESSAGE || 'true', // ᴇᴇᴘ ɪᴛ ᴀs ᴛʀᴜᴇ ɪꜰ ᴜ ᴡᴀɴɴᴀ ᴜsᴇ ɪᴛ
+  LEVEL_UP_MESSAGE: process.env.LEVEL_UP_MESSAGE || 'true', // ᴋᴇᴇᴘ ɪᴛ ᴀs ᴛʀᴜᴇ ɪꜰ ᴜ ᴡᴀɴɴᴀ ᴜsᴇ ɪᴛ
 
   ANTILINK_TYPES:  process.env.ANTILINK_TYPES || 'https://,chat.whatsapp.com', // sᴇᴛ ᴛʜᴇ ʙʟᴏᴄᴋᴇᴅ ᴜʀʟ ꜰᴏʀ ᴜʀ ᴀɴᴛɪʟɪɴᴋ
 
