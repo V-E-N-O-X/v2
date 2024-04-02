@@ -8,9 +8,7 @@ if (fs.existsSync('config.env')) {
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[ MODULES_VARS ]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-global.DATABASE_URL = process.env.DATABASE_URL || '', // ᴘᴀsᴛᴇ ʏᴏᴜʀ ᴍᴏɴɢᴏᴅʙ ᴏʀ ᴘᴏsᴛɢʀᴇsǫʟ ᴅʙ sᴛʀɪɴɢ ʜᴇʀᴇ
-
-
+global.mongodb = process.env.DATABASE_URL || '', // ᴘᴀsᴛᴇ ʏᴏᴜʀ ᴍᴏɴɢᴏᴅʙ ᴏʀ ᴘᴏsᴛɢʀᴇsǫʟ ᴅʙ sᴛʀɪɴɢ ʜᴇʀᴇ
 
 module.exports = {
 
