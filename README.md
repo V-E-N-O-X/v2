@@ -5,7 +5,7 @@
 <h1 align="center">Iris-V2 Baileys-Md</h1>
 
 <div align="center" class= "main"> 
-  <img src="https://i.ibb.co/G35jn3J/bot2p.jpg" width="150" height="300"/>
+  <img src="https://i.ibb.co/G35jn3J/bot2p.jpg" width="300" height="300"/>
 
 <p align="center">
     <a href="#"><img title="Iris_V2" src="https://img.shields.io/badge/WhatsApp%20BOT-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
