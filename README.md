@@ -7,6 +7,8 @@
 <div align="center" class= "main"> 
   <img src="https://i.ibb.co/G35jn3J/bot2p.jpg" width="300" height="300"/>
 
+<br>
+
 <p align="center">
     <a href="#"><img title="Iris_V2" src="https://img.shields.io/badge/WhatsApp%20BOT-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
@@ -25,7 +27,7 @@
 
 ---
 
-### ⛩ **Table of Contents**
+## ⛩ **Table of Contents**
 
 The original code is taken from the mixture of Asena & Secktor, I did changed few things like mine.
 
