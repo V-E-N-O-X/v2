@@ -1,31 +1,26 @@
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 <p align="center">
-    <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png">
+  <a href="https://github.com/V-E-N-O-X"><img title="Developer" src="https://img.shields.io/badge/Author-VenoxInc-green.svg?style=for-the-badge&logo=github" /></a>
+</p>
+<p align="center">
+  <img border-radius: 15px src="https://i.ibb.co/G35jn3J/bot2p.jpg" width="400" height="205"/>
+
+
+## 
+> **Warning**: This script is not for trade or sell purposes.
+
+<h1 align="center"> Iris_V2-MultiDevice </h1> 
+<p align="center"> Introducing Iris-Md,  A simple lightweight WhatsApp userbot made with baileys & node.js. </p>
+<p align="center">
+  <a href="https://github.com/V-E-N-O-X"><img title="Release" src="https://img.shields.io/badge/Version-%202.0.9-blue.svg?style=for-the-badge&logo=whatsapp" /></a>
 </p>
 
-<h1 align="center">Iris-V2 Baileys-Md</h1>
-
-<div align="center" class= "main"> 
-  <img src="https://i.ibb.co/G35jn3J/bot2p.jpg" width="300" height="300"/>
-
-<br>
-
 <p align="center">
-    <a href="#"><img title="Iris_V2" src="https://img.shields.io/badge/WhatsApp%20BOT-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
+<a href="https://www.youtube.com/c/infinite9452"><img title="Vibranium-Bot" src="https://img.shields.io/static/v1?label=Language&message=English&style=flat-square&color=blue"></a> &nbsp;
+  <img src="https://komarev.com/ghpvc/?username=Vibranium-Bot&label=VIEWS&style=flat-square&color=blue" />
 </p>
 
-<p align="center">
-    <a href="https://github.com/V-E-N-O-X"><img title="Author" src="https://img.shields.io/badge/AUTHOR-VenoxInc-green.svg?style=for-the-badge&logo=github"></a>
-</p>
-
-<div align="left"
-
----
-
-## **IMPORTANT**
-
-> **Warning**: This script is not for trade without perms.
-
----
+***
 
 ## Table of Contents
 
