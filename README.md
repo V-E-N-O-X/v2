@@ -18,7 +18,7 @@
 
 <br>
 
-## Table of Contents
+## ⛩ Table of Contents
 
 The original code is taken from the mixture of Asena & Secktor, I did changed few things like mine.
 
