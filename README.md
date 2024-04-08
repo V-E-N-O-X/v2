@@ -23,11 +23,11 @@
 
 ## **IMPORTANT**
 
-> **Warning**: This script is not for trading.
+> **Warning**: This script is not for trade without perms.
 
 ---
 
-## ⛩ **Table of Contents**
+## Table of Contents
 
 The original code is taken from the mixture of Asena & Secktor, I did changed few things like mine.
 
