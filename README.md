@@ -3,7 +3,7 @@
   <a href="https://github.com/V-E-N-O-X"><img title="Developer" src="https://img.shields.io/badge/Author-VenoxInc-green.svg?style=for-the-badge&logo=github" /></a>
 </p>
 <p align="center">
-  <img border-radius: 15px src="https://i.ibb.co/G35jn3J/bot2p.jpg" width="400" height="205"/>
+  <img border-radius: 15px src="https://i.ibb.co/G35jn3J/bot2p.jpg" width="400" height="300"/>
 
 
 ## 
