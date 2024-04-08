@@ -8,7 +8,7 @@
 <h1 align="center"> Iris_V2-MultiDevice </h1> 
 <p align="center"> Introducing Iris-Md,  A simple lightweight WhatsApp userbot made with baileys & node.js. </p>
 <p align="center">
-  <a href="https://github.com/V-E-N-O-X"><img title="Release" src="https://img.shields.io/badge/Version-%202.0.9-purple.svg?style=for-the-badge&logo=whatsapp" /></a>
+  <a href="https://github.com/V-E-N-O-X"><img title="Release" src="https://img.shields.io/badge/Version-%202.0.9-orange.svg?style=for-the-badge&logo=whatsapp" /></a>
 </p>
 
 <p align="center">
