@@ -31,5 +31,9 @@ To use this bot, follow these steps:
    - Deploy Using Platforms:
      - [Deploy On Heroku](#deploy-on-heroku)
      - [Deploy On Replit](#deploy-on-heroku)
+     - [Deploy On Railway](#deploy-on-heroku)
+
+3. **Support Me**
+   - <a href="https://whatsapp.com/channel/0029VaHt1710AgWB1B0Lkg0Q"><img alt="WhatsApp" src="https://img.shields.io/badge/-Whatsapp%20Channel-white?style=for-the-badge&logo=whatsapp&logoColor=black"/></a>
 
 Remember that this code is provided as-is, and there will be no further updates from my side. Feel free to experiment with it and adapt it to your needs!
