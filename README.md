@@ -33,7 +33,7 @@ To use this bot, follow these steps:
      - [Deploy On Replit](#deploy-on-heroku)
      - [Deploy On Railway](#deploy-on-heroku)
 
-3. **Support Me**
+3. **Support Me:**
    - [Get Support](https://whatsapp.com/channel/0029VaHt1710AgWB1B0Lkg0Q)
 
 
