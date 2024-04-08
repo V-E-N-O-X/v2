@@ -5,10 +5,6 @@
 <p align="center">
   <img border-radius: 15px src="https://i.ibb.co/G35jn3J/bot2p.jpg" width="400" height="300"/>
 
-
-## 
-> **Warning**: This script is not for trade or sell purposes.
-
 <h1 align="center"> Iris_V2-MultiDevice </h1> 
 <p align="center"> Introducing Iris-Md,  A simple lightweight WhatsApp userbot made with baileys & node.js. </p>
 <p align="center">
