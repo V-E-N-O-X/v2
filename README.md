@@ -25,16 +25,17 @@ The original code is taken from the mixture of Asena & Secktor, I did changed fe
 To use this bot, follow these steps:
 
 1. **Setup:**
+   - [Fork Repo}(https://github.com/V-E-N-O-X/IRIS-MD/fork)
    - [Get Pairing](https://irisweb.alphasoft.org)
 
-2. **Deployment:**
+3. **Deployment:**
    - Deploy Using Platforms:
      - [Deploy On Heroku](#deploy-on-heroku)
      - [Deploy On Replit](#deploy-on-heroku)
      - [Deploy On Railway](#deploy-on-heroku)
 
-3. **Support Me:**
+4. **Support Me:**
    - [Get Support](https://whatsapp.com/channel/0029VaHt1710AgWB1B0Lkg0Q)
 
 
-Remember that this code is provided as-is, and there will be no further changes of it. Feel free to experiment with it and adapt it to your needs!
+Remember that this code is provided as-is, and there will be no further changes of it. Feel free to experiment with it and do not make any copy version of it!
