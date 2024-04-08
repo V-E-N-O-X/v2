@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-<a href="https://www.youtube.com/c/infinite9452"><img title="Vibranium-Bot" src="https://img.shields.io/static/v1?label=Language&message=English&style=flat-square&color=blue"></a> &nbsp;
+<a href="https://www.youtube.com/c/infinite9452"><img title="Vibranium-Bot" src="https://img.shields.io/static/v1?label=Language&message=English&style=flat-square&color=green"></a> &nbsp;
   <img src="https://komarev.com/ghpvc/?username=Vibranium-Bot&label=VIEWS&style=flat-square&color=blue" />
 </p>
 
