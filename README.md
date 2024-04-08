@@ -16,7 +16,7 @@
   <img src="https://komarev.com/ghpvc/?username=Vibranium-Bot&label=VIEWS&style=flat-square&color=blue" />
 </p>
 
-***
+<br>
 
 ## Table of Contents
 
