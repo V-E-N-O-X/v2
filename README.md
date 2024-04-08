@@ -25,7 +25,7 @@ The original code is taken from the mixture of Asena & Secktor, I did changed fe
 To use this bot, follow these steps:
 
 1. **Setup:**
-   - [Fork Repo}(https://github.com/V-E-N-O-X/IRIS-MD/fork)
+   - [Fork Repo](https://github.com/V-E-N-O-X/IRIS-MD/fork)
    - [Get Pairing](https://irisweb.alphasoft.org)
 
 3. **Deployment:**
