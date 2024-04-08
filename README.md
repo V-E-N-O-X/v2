@@ -3,7 +3,7 @@
   <a href="https://github.com/V-E-N-O-X"><img title="Developer" src="https://img.shields.io/badge/Author-VenoxInc-green.svg?style=for-the-badge&logo=github" /></a>
 </p>
 <p align="center">
-  <img border-radius: 15px src="https://i.ibb.co/G35jn3J/bot2p.jpg" width="400" height="300"/>
+  <img border-radius: 15px src="https://i.ibb.co/G35jn3J/bot2p.jpg" width="300" height="300"/>
 
 <h1 align="center"> Iris_V2-MultiDevice </h1> 
 <p align="center"> Introducing Iris-Md,  A simple lightweight WhatsApp userbot made with baileys & node.js. </p>
@@ -25,7 +25,6 @@ The original code is taken from the mixture of Asena & Secktor, I did changed fe
 To use this bot, follow these steps:
 
 1. **Setup:**
-   - [Fork Repo](https://github.com/V-E-N-O-X/IRIS-MD/fork)
    - [Get Pairing](https://irisweb.alphasoft.org)
 
 3. **Deployment:**
