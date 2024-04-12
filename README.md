@@ -1,6 +1,6 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
-<a href="https://github.com/V-E-N-O-X"><img title="Creator" src="https://img.shields.io/badge/Creator-VENOX-green.svg?style=for-the-badge&logo=github"></a>
 <div align="center" class= "main"> 
+<a href="https://github.com/V-E-N-O-X"><img title="Creator" src="https://img.shields.io/badge/Creator-VENOX-green.svg?style=for-the-badge&logo=github"></a>
   <img src="https://i.ibb.co/G35jn3J/bot2p.jpg" width="300" height="300"/>
   <h1>ＩＲＩＳ- ＭＤ</h1>
 
