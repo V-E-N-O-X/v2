@@ -16,10 +16,7 @@
 <br><br>
 
 ## ᴄᴏɴꜰɪɢᴜʀᴀᴛɪᴏɴs
-
-Original code has taken from Secktor & Asena, i have changed few things like mine.
-
-To use this repository, follow these steps:
+<br>
 
 1. **Setup:**
    - [Get Pairing](https://irisweb.alphasoft.org)
