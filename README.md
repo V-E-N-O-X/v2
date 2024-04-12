@@ -18,8 +18,8 @@
 ## ᴄᴏɴꜰɪɢᴜʀᴀᴛɪᴏɴs
 
 1. **Setup:**
-   - Scan the QR code:
-     - [Get Pairing](https://irisweb.alphasoft.org)
+   - Scan the QR/Pair:
+     - [Get Session](https://irisweb.alphasoft.org)
 
 3. **Deployment:**
    - Deploy Using Platforms:
