@@ -33,32 +33,12 @@
         "value": "",
         "required": true
       },
-      "ANTILINK_TYPES": {
-        "description": "sᴇᴛ ᴛʜᴇ ʙʟᴏᴄᴋᴇᴅ ᴜʀʟ ꜰᴏʀ ᴜʀ ᴀɴᴛɪʟɪɴᴋ",
-        "value": "https://,chat.whatsapp.com,.com",
-        "required": false
-      },
-      "ANTI_BAD_WORD": {
-        "description": "ᴀᴅᴅ ᴛʜᴇ ʙᴀᴅᴡᴏʀᴅs ʜᴇʀᴇ, ɪꜰ ᴍᴏʀᴇ ᴛʜᴀɴ ᴏɴᴇ sᴇᴘᴀʀᴀᴛᴇᴅ ʙʏ ᴄᴏᴍᴍᴀ (,)",
-        "value": "nigger",
-        "required": false
-      },
-      "STICKER_DATA": {
-        "description": "sᴇᴛ ʏᴏᴜʀ sᴛɪᴄᴋᴇʀ ᴘᴀᴄᴋɴᴀᴍᴇ;ᴘᴀᴄᴋᴀᴜᴛʜᴏʀ ʜᴇʀᴇ, sᴇᴘᴀʀᴀᴛᴇᴅ ʙʏ  sᴇᴍɪᴄᴏʟᴏɴ (;)",
-        "required": false,
-        "value": "「 Cʀᴇᴀᴛᴇᴅ Bʏ ;VᴇɴᴏxSᴇʀ 」"
-      },
-      "DISABLE_PM": {
-        "description": "ɪꜰ ᴜ sᴇᴛ ɪᴛ ᴀs ᴛʀᴜᴇ ʙᴏᴛ ᴡɪʟʟ ᴏɴʟʏ ᴡᴏʀᴋs ᴏɴ ɢʀᴏᴜᴘ ᴄʜᴀᴛs",
-        "value": "false",
-        "required": false
-      },
       "HANDLERS": {
         "description": "ᴄʜᴏᴏsᴇ ʏᴏᴜʀ ᴘʀᴇꜰɪx ʜᴇʀᴇ, ᴇxᴀᴍᴘʟᴇ : (.'>;!~) ᴇᴛᴄ",
         "value": "."
       },
       "SUDO": {
-        "description": "sᴇᴛ ʏᴏᴜʀ sᴜᴅᴏ-ɴᴜᴍʙᴇʀ ꜰᴏʀ ʙᴏᴛ, sᴇᴘᴀʀᴀᴛᴇᴅ ʙʏ ᴄᴏᴍᴍᴀ (,)",
+        "description": "sᴇᴛ ʏᴏᴜʀ sᴜᴅᴏ-ɴᴜᴍʙᴇʀ ꜰᴏʀ ʙᴏᴛ",
         "value": "8801975492880"
       },
       "SESSION_ID": {
@@ -77,29 +57,6 @@
       "WORK_TYPE": {
         "description": "ɪꜰ ᴘᴜʙʟɪᴄ ᴛʜᴇɴ ᴇᴠᴇʀʏᴏɴᴇ ᴄᴀɴ ᴜsᴇ ɪᴛ, ᴏʀ ᴘʀɪᴠᴀᴛᴇ ᴛʜᴇɴ ᴏɴʟʏ ʏᴏᴜ...!",
         "value": "public"
-      },
-      "AUTO_READ_STATUS": {
-        "description": "ᴋᴇᴇᴘ ɪᴛ ᴀs ᴛʀᴜᴇ ɪꜰ ᴜ ᴡᴀɴɴᴀ ᴜsᴇ ɪᴛ",
-        "value": "false",
-        "required": false
-      },
-      "ALWAYS_ONLINE": {
-        "description": "ᴋᴇᴇᴘ ɪᴛ ᴀs ᴛʀᴜᴇ ɪꜰ ᴜ ᴡᴀɴɴᴀ ᴜsᴇ ɪᴛ",
-        "value": "false",
-        "required": false
-      },
-      "READ_MSG": {
-        "description": "ᴋᴇᴇᴘ ɪᴛ ᴀs ᴛʀᴜᴇ ɪꜰ ᴜ ᴡᴀɴɴᴀ ᴜsᴇ ɪᴛ",
-        "value": "false",
-        "required": false
-      },
-      "ANTI_FAKE": {
-        "description": "ᴀᴅᴅ ᴛʜᴇ ᴄᴄ ᴄᴏᴅᴇ ᴏꜰ ᴛʜᴇ ɴᴜᴍʙᴇʀ ᴛʜᴀᴛ ᴜ ᴡᴀɴɴᴀ ʙʟᴏᴄᴋ, ᴍᴏʀᴇ ᴛʜᴀɴ ᴏɴᴇ sᴇᴘᴀʀᴀᴛᴇᴅ ʙʏ ᴄᴏᴍᴍᴀ (,)",
-        "value": "212"
-      },
-      "LEVEL_UP_MESSAGE": {
-        "description": "ᴋᴇᴇᴘ ɪᴛ ᴀs ᴛʀᴜᴇ ɪꜰ ᴜ ᴡᴀɴɴᴀ ᴜsᴇ ɪᴛ",
-        "value": "false"
       }
     },
     "addons": [
