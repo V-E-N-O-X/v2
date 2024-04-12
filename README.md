@@ -32,4 +32,4 @@
      - [Support](https://whatsapp.com/channel/0029VaHt1710AgWB1B0Lkg0Q)
 
 
-Remember that this code is provided as-is, and there will be few major changes of it. Feel free to use it at your own risk and do not revamp it
+Remember that this code is provided as-is, and there will be few major changes of it. Feel free to experiment with on it by keeping in mind that it is not from official whatsapp
