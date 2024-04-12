@@ -15,7 +15,11 @@
 <div align="left"
 <br><br>
 
-## ```Methods```
+## ᴄᴏɴꜰɪɢᴜʀᴀᴛɪᴏɴs
+
+Original code has taken from Secktor & Asena, i have changed few things like mine.
+
+To use this repository, follow these steps:
 
 1. **Setup:**
    - [Get Pairing](https://irisweb.alphasoft.org)
