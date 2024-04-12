@@ -29,7 +29,7 @@
 
 4. **Support Me:**
    - Get Latest updates:
-     - [Support Channel](https://whatsapp.com/channel/0029VaHt1710AgWB1B0Lkg0Q)
+     - [Support](https://whatsapp.com/channel/0029VaHt1710AgWB1B0Lkg0Q)
 
 
-Remember that this code is provided as-is, and there will be no further changes of it. Feel free to experiment with it and do not make any copy version of it!
+Remember that this code is provided as-is, and there will be few major changes of it. Feel free to experiment with it and do not make any copy version of it!
