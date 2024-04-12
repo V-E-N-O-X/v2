@@ -5,10 +5,12 @@
 <p align="center">
   <img border-radius: 15px src="https://i.ibb.co/G35jn3J/bot2p.jpg" width="300" height="300"/>
 
-<h1 align="center"> Iris_V2-MultiDevice </h1> 
-<p align="center"> Introducing Iris-Md,  A simple lightweight WhatsApp userbot made with baileys & node.js. </p>
+<h1>ＩＲＩＳ- ＭＤ/h1>
+
 <p align="center">
   <a href="https://github.com/V-E-N-O-X"><img title="Release" src="https://img.shields.io/badge/Version-%202.0.9-orange.svg?style=for-the-badge&logo=whatsapp" /></a>
+  <a href="https://github.com/V-E-N-O-X/IRIS-MD/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/V-E-N-O-X/IRIS-MD?color=white&style=flat-square"></a>
+  <a href="https://github.com/V-E-N-O-X/IRIS-MD/network/members"><img title="Forks" src="https://img.shields.io/github/forks/V-E-N-O-X/IRIS-MD?color=yellow&style=flat-square">
 </p>
 
 <p align="center">
