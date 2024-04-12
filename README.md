@@ -16,10 +16,10 @@
 <br><br>
 
 ## ᴄᴏɴꜰɪɢᴜʀᴀᴛɪᴏɴs
-<br>
 
 1. **Setup:**
-   - [Get Pairing](https://irisweb.alphasoft.org)
+   - Scan the QR code:
+     - [Get Pairing](https://irisweb.alphasoft.org)
 
 3. **Deployment:**
    - Deploy Using Platforms:
