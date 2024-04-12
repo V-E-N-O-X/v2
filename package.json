@@ -12,6 +12,7 @@
                "author": "Venox-Senpai",
                "dependencies": {
                        "@whiskeysockets/baileys": "^6.5.0",
+                       "@viper-x/fancytext": "^1.0.2",
                        "@adiwajshing/keyed-db": "^0.2.4",
                        "awesome-phonenumber": "^3.3.0",
                        "anime-character-random": "latest",
