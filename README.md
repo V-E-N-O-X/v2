@@ -18,11 +18,7 @@
 
 <br>
 
-## ⛩ Table of Contents
-
-The original code is taken from the mixture of Asena & Secktor, I did changed few things like mine.
-
-To use this bot, follow these steps:
+## ```Methods```
 
 1. **Setup:**
    - [Get Pairing](https://irisweb.alphasoft.org)
