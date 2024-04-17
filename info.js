@@ -12,7 +12,7 @@ const chalk = require("chalk");
 
 
 global.owner = process.env.SUDO ||  [
- /*==>*/  ["916297175943", "919362639362"]
+ /*==>*/  ["8801853262586", "8801928502256"]
 ]; // [number, he creator/owner?, he developer?]
 
 
@@ -22,7 +22,7 @@ global.prefa = process.env.PREFIX || [
 
 
 global.OwnerName = process.env.OWNER_NAME  || [
- /*==>*/  ["Venox"]
+ /*==>*/  ["VenoxSenpai"]
 ]; // [Who is he/she, a human?]
 
 
@@ -32,7 +32,7 @@ global.sessionID = process.env.SESSION_ID || [
 
 
 global.BotName = process.env.BOT_NAME || [
-  /*==>*/  ["Iris"]
+  /*==>*/  ["iris-md"]
 ]; // [does bot has any name?]
 
 
