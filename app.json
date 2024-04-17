@@ -1,0 +1,44 @@
+{
+  "name": "IRIS-MD",
+  "version": "2.0.9",
+  "description": "Simple lightweight whatsapp bot",
+  "keywords": ["whatsapp", "bot", "md", "multi-device"],
+  "repository": "https://github.com/V-E-N-O-X/IRIS-MD",
+  "stack": "container",
+  "env": {
+    "SESSION_ID": {
+      "description": "paste Your Session ID",
+      "required": true
+    },
+    "PREFIX": {
+      "description": "Enter Prefix For Commands",
+      "required": true,
+      "value": "."
+    },
+    "SUDO": {
+      "description": "Enter Numbers With Country Code Without +",
+      "required": true,
+      "value": "8801975492880"
+    },
+    "BOT_NAME": {
+      "description": "Enter the botname",
+      "required": false,
+      "value": "ɪʀɪꜱ-ᴍᴅ"
+    },
+    "OWNER_NAME": {
+      "description": "enter your ownername",
+      "required": false,
+      "value": "VenoxSenpai"
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ]
+}
