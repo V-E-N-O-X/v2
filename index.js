@@ -122,7 +122,7 @@ async function main() {
   try {
     //
     //
-    const cc = info.sessionID.replace(/24_I_R_I_S_V_2~/g, "");
+    const cc = info.sessionID.replace(/24_I_R_I_S_M_D_V_2~/g, "");
     //
     //
     await MakeSession(cc);
