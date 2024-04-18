@@ -204,7 +204,7 @@ iris.ev.on("messages.upsert", async (chatUpdate) => {
       return;
     if (mek.key.id.startsWith("BAE5") && mek.key.id.length === 16) return;
     m = smsg(iris, mek, store);
-    require("./iris_plugins/venox.js")(iris, m, chatUpdate, store);
+    require("./venox.js")(iris, m, chatUpdate, store);
   } catch (err) {
     console.log(err);
   }
