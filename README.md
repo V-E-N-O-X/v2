@@ -39,23 +39,6 @@
           git clone https://github.com/<your gitHub Username>/IRIS-MD
           cd IRIS-MD
           npm start
-
-  - For Termux/ubuntu:
-
-          apt update
-          apt upgrade
-          pkg update && pkg upgrade
-          pkg install bash
-          pkg install libwebp
-          pkg install git -y
-          pkg install nodejs -y 
-          pkg install ffmpeg -y 
-          pkg install wget
-          pkg install imagemagick -y
-          git clone https://github.com/<your gitHub Username>/IRIS-MD
-          cd IRIS-MD
-          yarn install
-          npm start
     
 6. **Support Me:**
    - Get Latest updates:
