@@ -232,8 +232,44 @@ module.exports = iris = async (iris, m, chatUpdate, store) => {
     autoreadsw = true;
     _sewa.expiredCheck(iris, sewa);
 
-    // ====== reply module ====== //
-    const reply = (teks) => {
-      iris.sendMessage(m.chat, { text: teks }, { quoted: m })
-    }
     
+    // ====== reply module ====== //
+    let venox = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "displayName": "IRIS-MD","vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=8801853262586:8801853262586\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" };
+    
+    const reply = (teks) => {
+       iris.sendMessage(m.chat, { text: teks, contextInfo: { externalAdReply: {
+         title: info.BotName,
+         body: `Iris-Md Whatsapp-Bot 🍀`,
+         sourceUrl: global.channel,
+         mediaUrl: "",
+         mediaType: 1,
+         showAdAttribution: true,
+         renderLargerThumbnail: false,
+         thumbnailUrl: `https://i.ibb.co/G35jn3J/bot2p.jpg` }}}, { quoted: venox });
+    };
+
+    // ==== Functions ==== //
+    const sender = m.isGroup ? (m.key.participant ? m.key.participant : m.participant) : m.key.remoteJid
+    const senderNumber = sender.split('@')[0]
+    function randomNomor(angka) {
+      return Math.floor(Math.random() * angka) + 1;
+    }
+
+    if (m.message) {
+      addBalance(m.sender, randomNomor(574), balance);
+      console.log(
+        chalk.black(chalk.bgWhite("[ MESSAGE ]")),
+        chalk.black(chalk.bgGreen(new Date())),
+        chalk.black(chalk.bgBlue(budy || m.mtype)) +
+        "\n" +
+        chalk.magenta("=> From"),
+        chalk.green(pushname),
+        chalk.yellow(m.sender) + "\n" + chalk.blueBright("=> In"),
+        chalk.green(m.isGroup ? pushname : "Private Chat", m.chat)
+      );
+    }
+
+    if (isCmd && !isUser) {
+      pendaftar.push(m.sender);
+      fs.writeFileSync("./lib/storage/user/user.json", JSON.stringify(pendaftar));
+    }
