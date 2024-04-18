@@ -27,9 +27,39 @@
      - [Deploy On Replit](#deploy-on-heroku)
      - [Deploy On Railway](#deploy-on-heroku)
 
-4. **Support Me:**
+4. **Deploy on VPS or PC**
+   - For Vps:
+
+          apt install nodejs 
+          apt install git 
+          apt apt install ffmpeg 
+          apt apt install libwebp 
+          apt apt install imagrmagick
+          apt install bash
+          git clone https://github.com/<your gitHub Username>/IRIS-MD
+          cd IRIS-MD
+          npm start
+
+  - **For Termux/ubuntu:**
+
+          apt update
+          apt upgrade
+          pkg update && pkg upgrade
+          pkg install bash
+          pkg install libwebp
+          pkg install git -y
+          pkg install nodejs -y 
+          pkg install ffmpeg -y 
+          pkg install wget
+          pkg install imagemagick -y
+          git clone https://github.com/<your gitHub Username>/IRIS-MD
+          cd IRIS-MD
+          yarn install
+          npm start
+    
+6. **Support Me:**
    - Get Latest updates:
      - [Support](https://whatsapp.com/channel/0029VaHt1710AgWB1B0Lkg0Q)
 
 
-Remember that this code is provided as-is, and there will be few major changes of it. Feel free to experiment on it by keeping in mind that it is not from official whatsapp
+Remember that this code is provided as-is, and there will be few major changes of it. Feel free to experiment on it by keeping in mind that it is not from official whatsapp...Thanks to [Kai](https://github.com/Kai0071)
