@@ -84,7 +84,7 @@ async function startIris() {
         "green"
       )
     );
-    console.log(color('\nHello, I am VenoxSenpai, Developer of this Bot\n\nThanks for using: iris Bot.', 'aqua'));
+    console.log(color('\nHello, I am VenoxSenpai, Developer of this Bot\n\nThanks for using: Iris-MD Whatasapp Bot.', 'aqua'));
     console.log(color('\nYou can follow me on GitHub: V-E-N-O-X', 'aqua'));
     //
     //
@@ -414,26 +414,26 @@ iris.ev.on("connection.update", async (update) => {
     let reason = lastDisconnect.error ? lastDisconnect?.error?.output.statusCode : 0;
     switch (reason) {
       case DisconnectReason.badSession:
-        console.log(`Bad Session File, Please Replace Session with New One`);
+        console.log(`[ Iris.Inc ] =>  Bad Session ID, Please Replace Session with New One`);
         process.exit();
         break;
       case DisconnectReason.connectionClosed:
       case DisconnectReason.connectionLost:
       case DisconnectReason.restartRequired:
       case DisconnectReason.timedOut:
-        console.log("Connection closed, reconnecting...");
+        console.log("[ Iris.Inc ] =>  Connection closed, reconnecting...");
         startiris();
         break;
       case DisconnectReason.connectionReplaced:
-        console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First");
+        console.log("[ Iris.Inc ] =>  Connection Replaced, Another New Session Opened, Please Close Current Session First");
         process.exit();
         break;
       case DisconnectReason.loggedOut:
-        console.log(`Device Logged Out, Please Delete Session and Scan Again.`);
+        console.log(`[ Iris.Inc ] =>  Device Logged Out, Please Delete Session and Scan Again.`);
         process.exit();
         break;
       default:
-        console.log(`Unknown DisconnectReason: ${reason}|${connection}`);
+        console.log(`[ Iris.Inc ] =>  Unknown DisconnectReason: ${reason}|${connection}`);
         break;
     }
   }
