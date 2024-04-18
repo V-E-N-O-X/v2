@@ -113,7 +113,7 @@ global.ownertag = ["8801853262586"];
 global.location = "Framgate, Dhaka Divison";
 global.sc = "https://github.com/V-E-N-O-X/IRIS-MD";
 global.channel = "https://whatsapp.com/channel/0029VaHt1710AgWB1B0Lkg0Q";
-global.vidmenu = { url: '' };
+global.vidmenu = { url: 'https://media1.tenor.com/m/62BV0H4Pnq8AAAAC/anime.gif' };
 global.websitex = "https://github.com/V-E-N-O-X";
 global.lolhuman = "KaysaS";
 // =============================================================================== //
