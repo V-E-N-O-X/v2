@@ -165,6 +165,32 @@ iris.ws.on('CB:call', async (json) => {
 //
 //
 //
+iris.ev.on('connection.update', async (update) => {
+  const { connection } = update;
+  if (connection === 'open') {
+    console.log("ɪʀɪs-ᴍᴅ ᴄᴏɴɴᴇᴄᴛᴇᴅ sᴜᴄᴄᴇssꜰᴜʟʟʏ ✅");
+    iris.sendMessage(iris.user.id, {
+      text: `
+*ɪʀɪs-ᴍᴅ ᴄᴏɴɴᴇᴄᴛᴇᴅ 🍀*\n
+_ᴘʟᴜɢɪɴs: 231_
+_ᴍᴏᴅᴇ: Undefined_
+_ᴘʀᴇꜰɪx: [ ${global.prefa} ]_\n
+📶 *ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ʟɪɴᴋ:*
+» gg.gg/irisbotz`,
+      contextInfo: {
+        externalAdReply: {
+          title: "ɪʀɪs-ᴍᴅ",
+          body: "🍀 ʙᴀɪʟᴇʏs ʟɪɢʜᴛᴡᴇɪɢʜᴛ ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ 🍀",
+          thumbnailUrl: "https://i.ibb.co/G35jn3J/bot2p.jpg",
+          mediaType: 1,
+          mediaUrl: "https://whatsapp.com/channel/0029VaHt1710AgWB1B0Lkg0Q",
+          sourceUrl: "https://whatsapp.com/channel/0029VaHt1710AgWB1B0Lkg0Q",
+        }
+      }
+    });
+  }
+});
+
 iris.ev.on("messages.upsert", async (chatUpdate) => {
   try {
     mek = chatUpdate.messages[0];
