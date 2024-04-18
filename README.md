@@ -40,7 +40,7 @@
           cd IRIS-MD
           npm start
 
-  - **For Termux/ubuntu:**
+  - For Termux/ubuntu:
 
           apt update
           apt upgrade
