@@ -45,5 +45,8 @@
      - [Support](https://whatsapp.com/channel/0029VaHt1710AgWB1B0Lkg0Q)
 
 
-Remember that this code is provided as-is, and there will be few major changes of it. Feel free to experiment on it by keeping in mind that it is not from official whatsapp.<br><br>
-Thanks to [Kai](https://github.com/Kai0071)
+Remember that this code is provided as-is, and there will be few major changes of it. Feel free to experiment on it by keeping in mind that it is not from official whatsapp.
+
+
+7. **Thanks to**
+   - [Kai](https://github.com/Kai0071)
