@@ -27,20 +27,8 @@
      - [Deploy On Replit](#deploy-on-heroku)
      - [Deploy On Railway](#deploy-on-heroku)
 
-4. **Deploy on VPS or PC**
-   - For Vps:
-
-          apt install nodejs 
-          apt install git 
-          apt apt install ffmpeg 
-          apt apt install libwebp 
-          apt apt install imagrmagick
-          apt install bash
-          git clone https://github.com/<your gitHub Username>/IRIS-MD
-          cd IRIS-MD
-          npm start
     
-6. **Support Me:**
+4. **Support Me:**
    - Get Latest updates:
      - [Support](https://whatsapp.com/channel/0029VaHt1710AgWB1B0Lkg0Q)
 
