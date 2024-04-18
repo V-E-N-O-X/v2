@@ -248,6 +248,8 @@ module.exports = iris = async (iris, m, chatUpdate, store) => {
          thumbnailUrl: `https://i.ibb.co/G35jn3J/bot2p.jpg` }}}, { quoted: venox });
     };
 
+
+
     // ==== Functions ==== //
     const sender = m.isGroup ? (m.key.participant ? m.key.participant : m.participant) : m.key.remoteJid
     const senderNumber = sender.split('@')[0]
@@ -273,3 +275,168 @@ module.exports = iris = async (iris, m, chatUpdate, store) => {
       pendaftar.push(m.sender);
       fs.writeFileSync("./lib/storage/user/user.json", JSON.stringify(pendaftar));
     }
+
+  // === Function Wapresence === //
+  if (global.autoreadgc) {
+  if (command) {
+    await iris.sendPresenceUpdate('composing', m.chat);
+    const keysToMarkAsRead = [
+      {
+        remoteJid: m.chat,
+        id: m.key.id,
+        participant: m.sender,
+      },
+    ];
+    await iris.readMessages(keysToMarkAsRead);
+  }
+}
+
+if (global.autoRecord) {
+  if (m.chat) {
+    iris.sendPresenceUpdate("recording", m.chat);
+  }
+}
+
+if (global.autoTyping) {
+  if (m.chat) {
+    iris.sendPresenceUpdate("composing", m.chat);
+  }
+}
+
+if (global.available) {
+  if (m.chat) {
+    iris.sendPresenceUpdate("available", m.chat);
+  }
+}
+
+//----------------------------------------------------------------------------------------------------
+for (let botto of venoxaudio) {
+  if (budy === botto) {
+    try {
+      let result = fs.readFileSync(`./lib/assets/audio/${botto}.mp3`);
+      iris.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m });
+    } catch (error) {
+      console.error(error);
+    }
+  }
+}
+//----------------------------------------------------------------------------------------------------
+if (AntiLinkAll) {
+  var rondonxk = '[-a-zA-Z0-9@:%._+~#=].[-a-zA-Z0-9@:%._+~#=].[-a-zA-Z0-9()@:%_+.~#?&/=]';
+  if (budy.includes("https://") || budy.includes("http://")) {
+    if (!isBotAdmins) return;
+    const bvl = `\`\`\`「  Antilink System  」\`\`\`\n\nLink sent by admin so no action will be taken!`;
+    if (isAdmins || m.key.fromMe || isCreator) return reply(bvl);
+    const kice = m.sender;
+    await iris.sendMessage(
+      from,
+      {
+        delete: {
+          remoteJid: from,
+          id: m.id,
+          participant: m.sender,
+        },
+      },
+      {
+        quoted: m,
+      }
+    );
+    await iris.sendMessage(from, { text: `\`\`\`「  Antilink System  」\`\`\`\n\n*⚠️ Group link detected!*\n\n*🚫@${kice.split("@")[0]} You are not allowed to send any links in this group!*\n`, contextInfo: { mentionedJid: [kice] } }, { quoted: m });
+  }
+}
+//----------------------------------------------------------------------------------------------------
+this.game = this.game || {};
+let room = Object.values(this.game).find(room => room.id && room.game && room.state && room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender) && room.state === 'PLAYING');
+
+if (room) {
+  let isWin = false;
+  let isTie = false;
+  let isSurrender = false;
+
+  if (!/^([1-9]|(me)?give up|surr?ender|off|skip)$/i.test(m.text)) return;
+
+  isSurrender = !/^[1-9]$/.test(m.text);
+
+  if (m.sender !== room.game.currentTurn && !isSurrender) return;
+
+  let ok = room.game.turn(m.sender === room.game.playerO, parseInt(m.text) - 1);
+  if (!isSurrender && ok < 1) {
+    reply({
+      '-3': 'Game Has Ended',
+      '-2': 'Invalid',
+      '-1': 'Invalid Position',
+      '0': 'Invalid Position',
+    }[ok]);
+    return;
+  }
+
+  if (m.sender === room.game.winner) isWin = true;
+  else if (room.game.board === 511) isTie = true;
+
+  let arr = room.game.render().map(v => ({
+    'X': '❌',
+    'O': '⭕',
+    '1': '1️⃣',
+    '2': '2️⃣',
+    '3': '3️⃣',
+    '4': '4️⃣',
+    '5': '5️⃣',
+    '6': '6️⃣',
+    '7': '7️⃣',
+    '8': '8️⃣',
+    '9': '9️⃣',
+  }[v]));
+
+  if (isSurrender) {
+    room.game._currentTurn = m.sender === room.game.playerX;
+    isWin = true;
+  }
+
+  let winner = isSurrender ? room.game.currentTurn : room.game.winner;
+  let str = `Room ID: ${room.id}\n${arr.slice(0, 3).join('')}\n${arr.slice(3, 6).join('')}\n${arr.slice(6).join('')}\n${isWin ? `@${winner.split('@')[0]} Won!` : isTie ? `Game Over` : `Turn ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}\n❌: @${room.game.playerX.split('@')[0]}\n⭕: @${room.game.playerO.split('@')[0]}\nTyped *surrender* to surrender and admit defeat`;
+
+  if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
+    room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat;
+
+  if (room.x !== room.o) {
+    await iris.sendText(room.x, str, m, { mentions: parseMention(str) });
+  }
+  await iris.sendText(room.o, str, m, { mentions: parseMention(str) });
+
+  if (isTie || isWin) {
+    delete this.game[room.id];
+  }
+}
+//----------------------------------------------------------------------------------------------------
+const pickRandom = (arr) => {
+  return arr[Math.floor(Math.random() * arr.length)];
+};
+
+const smallinput = budy.toLowerCase();
+const prefix = global.prefa
+
+const greetings = {
+  'hello': `🌟 Hello ${pushname}, I am ${BotName}. How can I assist you today? 🤖`,
+  'hi': `🌈 Hi ${pushname}, did it hurt? When you fell from heaven? 😊`,
+  'hey': `🌼 Hey there ${pushname}, are you a magician? Because whenever I look at you, everyone else disappears. 🎩✨`,
+  'how are you': `🌟 Hey ${pushname}, do you believe in love at first sight, or should I walk by again? 😏`,
+  'commands': `📋 Sure! Here are some available commands:\n- ${prefix}help: Display available commands.\n- ${prefix}weather [city]: Get the weather forecast for a specific city.\n- ${prefix}joke: Get a random joke.\n- ${prefix}quote: Get a random quote.\n- ${prefix}news: Get the latest news headlines.\n- ${prefix}translate [text]: Translate text to another language. ℹ️`,
+  'good morning': `🌞 Good morning, ${pushname}! Did you have lucky charms for breakfast? Because you look magically delicious! 🍀😉`,
+  'ohayo': `🌅 Ohayo ${pushname}! Are you made of copper and tellurium? Because you're Cu-Te! 😊`,
+  'konichiwa': `🌸 Konichiwa ${pushname}! Are you a time traveler? Because I can't imagine my future without you. ⏳💕`,
+  'good afternoon': `🌤️ Good afternoon, ${pushname}! Are you a parking ticket? Because you have "fine" written all over you. 😉`,
+  'good evening': `🌙 Good evening, ${pushname}! If you were a vegetable, you'd be a cute-cumber! 🥒😄`,
+  'good night': `🌟 Good night, ${pushname}! Are you tired? Because you've been running through my mind all day. 💭😴`,
+  'sweet dreams': `🌠 Sweet dreams, ${pushname}! I hope your dreams are as sweet as you are! 🌈✨`,
+  'venox': `Sensei is sleeping, and I lost connection with him... 🌌`,
+};
+
+for (const [keyword, response] of Object.entries(greetings)) {
+  if (smallinput.includes(keyword)) {
+    reply(response);
+    break;
+  }
+}
+//----------------------------------------------------------------------------------------------------
+switch (command) {
+  
