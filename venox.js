@@ -455,9 +455,105 @@ async function loading() {
         await iris.sendMessage(from, { text: loadingSteps[i], edit: key });
     }
 }
-//-------------------------------[ Cases ]-----------------------------------
-switch (command) {
+//------------------------------------------------------------------
+const nsfwCommands = {
+  'ahegao': 'ahegao.json',
+  'ass': 'ass.json',
+  'bdsm': 'bdsm.json',
+  'blowjob': 'blowjob.json',
+  'cuckold': 'cuckold.json',
+  'cum': 'cum.json',
+  'eba': 'eba.json',
+  'ero': 'ero.json',
+  'femdom': 'femdom.json',
+  'foot': 'foot.json',
+  'gangbang': 'gangbang.json',
+  'glasses': 'glasses.json',
+  'hentai': 'hentai.json',
+  'jahy': 'pussy.json',
+  'mangansfw': 'manga.json',
+  'masturbation': 'masturbation.json',
+  'milf': 'milf.json',
+  'neko': 'neko.json',
+  'neko2': 'neko2.json',
+  'nsfwloli': 'nsfwloli.json',
+  'orgy': 'orgy.json',
+  'panties': 'panties.json',
+  'pussy': 'pussy.json',
+  'tentacles': 'tentacles.json',
+  'thighs': 'thighs.json'
+};
 
+//-------------------------------[ Cases ]-----------------------------------
+
+for (let command in nsfwCommands) {
+  switch (command) {
+    case 'ahegao':
+    case 'ass':
+    case 'bdsm':
+    case 'blowjob':
+    case 'cuckold':
+    case 'cum':
+    case 'eba':
+    case 'ero':
+    case 'femdom':
+    case 'foot':
+    case 'gangbang':
+    case 'glasses':
+    case 'hentai':
+    case 'jahy':
+    case 'mangansfw':
+    case 'masturbation':
+    case 'milf':
+    case 'neko':
+    case 'neko2':
+    case 'nsfwloli':
+    case 'orgy':
+    case 'panties':
+    case 'pussy':
+    case 'tentacles':
+    case 'thights':
+      if (isBan || isBanChat || !m.isGroup || !AntiNsfw) return;
+      iris.sendMessage(from, { react: { text: "🥵", key: m.key } });
+      
+      var nsfwdata = JSON.parse(fs.readFileSync(`./lib/media/nsfw/${nsfwCommands[command]}`));
+      var numberOfPictures = 3;
+
+      function getRandomPictures(array, count) {
+        var shuffled = array.slice();
+        var i = array.length;
+        var min = i - count;
+        var temp;
+        var index;
+
+        while (i-- > min) {
+          index = Math.floor((i + 1) * Math.random());
+          temp = shuffled[index];
+          shuffled[index] = shuffled[i];
+          shuffled[i] = temp;
+        }
+
+        return shuffled.slice(min);
+      }
+
+      var selectedPictures = getRandomPictures(nsfwdata, numberOfPictures);
+
+      for (let picture of selectedPictures) {
+        iris.sendMessage(m.chat, { caption: mess.success, image: { url: picture.url } }, { quoted: m });
+      }
+      break;
+
+    default:
+      if (isBan || isBanChat || !m.isGroup || !AntiNsfw) return;
+      iris.sendMessage(from, { react: { text: "🥵", key: m.key } });
+
+      var nsfwdata = JSON.parse(fs.readFileSync(`./lib/media/nsfw/${nsfwCommands[command]}`));
+      var venoxresult = pickRandom(nsfwdata);
+      iris.sendMessage(m.chat, { caption: mess.success, image: { url: venoxresult.url } }, { quoted: m });
+      break;
+  }
+}
+//-------------------------------------------------------------------
 case 'changeprefix':
 case 'setprefix': {
     if (isBan) return reply(mess.banned);
@@ -916,7 +1012,7 @@ case 'suggest': {
         await iris.sendMessage(mod, { text: reportMessage }, { quoted: m });
     }
 
-    await iris.sendMessage('120363026915700516@g.us', { text: reportMessage, mentions: groupAdmins }, { quoted: m });
+    await iris.sendMessage('@g.us', { text: reportMessage, mentions: groupAdmins }, { quoted: m });
 
     m.reply(`*✅ Your report has been submitted successfully to the support group & owner.*\n\n*You will get a response shortly... ♥️*`);
     break;
@@ -1080,6 +1176,887 @@ case 'withdrawal': {
     if (withdraw.noten) return reply('🏧 Insufficient funds in your bank');
     const add = eco.give(user, cara, query);
     reply(`🏧 ALERT  💎${withdraw.amount} has been added to your wallet.`);
+}
+break;
+//----------------------------------------------------------------------------------
+case 'rob': case 'attack':
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        if (!m.isGroup) return reply(mess.grouponly)
+
+        {
+          iris.sendMessage(from, { react: { text: "🔪", key: m.key } })
+          if (!text) return reply(`Use ${prefix}rob @user`)
+          const target =
+            m.quoted && m.mentionedJid.length === 0
+              ? m.quoted.sender
+              : m.mentionedJid[0] || null;
+          if (!target || target === m.sender) return reply("what are you trying to do!")
+          if (m.quoted?.sender && !m.mentionedJid.includes(m.quoted.sender)) m.mentionedJid.push(m.quoted.sender)
+          while (m.mentionedJid.length < 2) m.mentionedJid.push(m.sender)
+          const cara = "cara"
+          const user1 = m.sender
+          const user2 = target
+          const k = 250
+          const balance1 = await eco.balance(user1, cara)
+          const balance2 = await eco.balance(user2, cara)
+          const typ = ['ran', 'rob', 'caught'];
+          const random = typ[Math.floor(Math.random() * typ.length)];
+          if (k > balance1.wallet) return reply(`☹️ You dont have enough money to pay incase you get caught`);
+          if (k > balance2.wallet) return reply(`Sorry, your victim is too poor 🤷🏽‍♂️ let go.`);
+          let tpy = random
+          switch (random) {
+            case 'ran':
+              await reply(`Your victim escaped, be more scary☠️ next time.`)
+          }
+        }
+        break;
+//----------------------------------------------------------------------------------
+      case 'transfer': case 'give': {
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        if (!m.isGroup) return reply(mess.grouponly)
+        iris.sendMessage(from, { react: { text: "🗿", key: m.key } })
+
+        let value = text.trim().split(" ");
+        if (value[0] === "") return reply(`Use ${prefix}transfer 100 @user`);
+        const target =
+          m.quoted && m.mentionedJid.length === 0
+            ? m.quoted.sender
+            : m.mentionedJid[0] || null;
+        if (!target || target === m.sender) return reply("what are you trying to do!")
+        if (m.quoted?.sender && !m.mentionedJid.includes(m.quoted.sender)) m.mentionedJid.push(m.quoted.sender)
+        while (m.mentionedJid.length < 2) m.mentionedJid.push(m.sender)
+        const cara = "cara"
+        const user1 = m.sender
+        const user2 = target
+        const word = value[0];
+        const code = value[1];
+        let d = parseInt(word)
+        if (!d) return reply("check your text plz u r using the command in a wrong way")
+
+        const balance = await eco.balance(user1, cara);
+        let a = (balance.wallet) < parseInt(word)
+        //Returns wallet, bank, and bankCapacity. Also creates a USer if it doesn't exist.	
+        if (a == true) return reply("you dont have sufficient money to transfer");
+
+        const deduct = await eco.deduct(user1, cara, value[0]);
+        const give = await eco.give(user2, cara, value[0]);
+        reply(`📠 Transaction successful`)
+
+      }
+        break;
+//----------------------------------------------------------------------------------
+      case 'wealth': case 'ritual': {
+        if (!isCreator) return reply(mess.botowner)
+        var user = m.sender
+        var cara = 'cara'
+        const give1 = eco.give(user, cara, 9999)
+        reply(`You are the wealthiest my *Lord*`)
+      }
+        break;
+//----------------------------------------------------------------------------------
+case 'gamble': case 'lottery':
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        if (!m.isGroup) return reply(mess.grouponly)
+        {
+          var texts = text.trim().split(" ");
+          var opp = texts[1];
+          var value = texts[0].toLowerCase();
+          var gg = parseInt(value)
+          var user = m.sender
+          const cara = 'cara'
+          const balance = await eco.balance(user, cara);
+          const g = (balance.wallet) > parseInt(value)
+          const k = 50
+          const a = (k) > parseInt(value)
+          const twice = gg * 2
+          const f = ["up", "right", "left", "down", "up", "left", "down", "right", "up", "down", "right", "left"]
+          const r = f[Math.floor(Math.random() * f.length)]
+          if (isBan) return reply(mess.banned);
+          if (isBanChat) return reply(mess.bangc);
+          if (!m.isGroup) return reply(mess.grouponly)
+          //if (link1 == link2){
+          if (texts[0] === "")
+            return reply(
+              `Example:  ${prefix}gamble 100 direction(left,right,up,down)`
+            );
+          if (!value) return reply("*Please, specify the amount you are gambling with!");
+          if (!opp) return reply("Specify the direction you are betting on!");
+          if (!gg) return reply("Check your text please, You are using the command in a wrong way")
+          if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
+          if (g == false) return reply(`You dont have sufficient 💎 Diamond to gamble with`);
+          if (a == true) return reply(`Sorry ${pushname}, you can only gamble with more than 💎50.`);
+          if (r == opp) {
+            let give = await eco.give(user, cara, twice);
+            reply(`*📉 You won 💎${twice}*`)
+          }
+          else {
+            let deduct = await eco.deduct(user, cara, texts[0]);
+            reply(`*📈 You lost 💎${texts[0]}*`)
+          }
+        }
+        break;
+//----------------------------------------------------------------------------------
+case 'slot': case 'spin': {
+    if (isBan) return reply(mess.banned);
+    if (isBanChat) return reply(mess.bangc);
+    if (!m.isGroup) return reply(mess.grouponly);
+
+    var today = new Date();
+    if (today.getDay() == 6 || today.getDay() == 5 || today.getDay() == 0) {
+        if (text == 'help') return reply(`*1:* Use ${prefix}slot to play\n\n*2:* You must have 💎100 in your wallet\n\n*3:* If you don't have money in wallet then withdraw from your bank\n\n*4:* If you don't have money in your bank too then use economy features to gain money`);
+        if (text == 'money') return reply(`*1:* Small Win --> +💎20\n\n*2:* Small Lose --> -💎20\n\n*3:* Big Win --> +💎100\n\n*4:* Big Lose --> -💎50\n\n*5:* 🎉 JackPot --> +💎1000`);
+
+        const fruit1 = ["🥥", "🍎", "🍇"];
+        const fruit2 = ["🍎", "🍇", "🥥"];
+        const fruit3 = ["🍇", "🥥", "🍎"];
+        const fruit4 = ["🍇", "🥥", "🍎"];
+        const lose = ['*You suck at playing this game*\n\n_--> 🍍-🥥-🍎_', '*Totally out of line*\n\n_--> 🥥-🍎-🍍_', '*Are you a newbie?*\n\n_--> 🍎-🍍-🥥_'];
+        const smallLose = ['*You cannot harvest coconut 🥥 in a pineapple 🍍 farm*\n\n_--> 🍍>🥥<🍍_', '*Apples and Coconut are not best Combo*\n\n_--> 🍎>🥥<🍎_', '*Coconuts and Apple are not great deal*\n\n_--> 🥥>🍎<🥥_'];
+        const won = ['*You harvested a basket of*\n\n_--> 🍎+🍎+🍎_', '*Impressive, You must be a specialist in plucking coconuts*\n\n_--> 🥥+🥥+🥥_', '*Amazing, you are going to be making pineapple juice for the family*\n\n_--> 🍍+🍍+🍍_'];
+        const near = ['*Wow, you were so close to winning pineapples*\n\n_--> 🍎-🍍+🍍_', '*Hmmm, you were so close to winning Apples*\n\n_--> 🍎+🍎-🍍_'];
+        const jack = ['*🥳 JackPot 🤑*\n\n_--> 🍇×🍇×🍇×🍇_', '*🎉 JaaackPooot!*\n\n_--> 🥥×🥥×🥥×🥥_', '*🎊 You Just hit a jackpot worth 💎1000*'];
+
+        const user = m.sender;
+        const cara = "cara";
+        const k = 100;
+        const balance1 = await eco.balance(user, cara);
+
+        if (k > balance1.wallet) return reply(`You are going to be spinning on your wallet, you need at least 💎100`);
+
+        const f1 = fruit1[Math.floor(Math.random() * fruit1.length)];
+        const f2 = fruit2[Math.floor(Math.random() * fruit2.length)];
+        const f3 = fruit3[Math.floor(Math.random() * fruit3.length)];
+        const f4 = fruit4[Math.floor(Math.random() * fruit4.length)];
+
+        const mess1 = lose[Math.floor(Math.random() * lose.length)];
+        const mess2 = won[Math.floor(Math.random() * won.length)];
+        const mess3 = near[Math.floor(Math.random() * near.length)];
+        const mess4 = jack[Math.floor(Math.random() * jack.length)];
+        const mess5 = smallLose[Math.floor(Math.random() * smallLose.length)];
+
+        if ((f1 !== f2) && f2 !== f3) {
+            const deduct1 = await eco.deduct(user, cara, 50);
+            reply(`${mess1}\n\n*Big Lose -->* _💎50_`);
+        } else if ((f1 === f2) && f2 === f3) {
+            const give1 = await eco.give(user, cara, 100);
+            reply(`${mess2}\n*_Big Win -->* _💎100_`);
+        } else if ((f1 === f2) && f2 !== f3) {
+            const give2 = await eco.give(user, cara, 20);
+            reply(`${mess3}\n*Small Win -->* _💎20_`);
+        } else if ((f1 !== f2) && f1 === f3) {
+            const deduct2 = await eco.deduct(user, cara, 20);
+            reply(`${mess5}\n\n*Small Lose -->* _💎20_`);
+        } else if ((f1 !== f2) && f2 === f3) {
+            const give4 = await eco.give(user, cara, 20);
+            reply(`${mess3}\n\n*Small Win -->* _💎20_`);
+        } else if (((f1 === f2) && f2 === f3) && f3 === f4) {
+            const give5 = await eco.give(user, cara, 1000);
+            reply(`${mess4}\n\n_🎊 JackPot -->_ 💎1000_`);
+        } else {
+            reply(`Do you understand what you are doing?`);
+        }
+    } else {
+        reply(`*You can only play this game during weekends*\n\n*🌿 Friday*\n*🎏 Saturday*\n*🎐 Sunday*`);
+    }
+}
+break;
+//----------------------------------------------------------------------------------
+case 'limituser': case 'userlimit': case 'limit':
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        {
+          let txt = `「 *All User Limit* 」\n\n`
+          for (let i of _limit) {
+            txt += ` *User ID :* @${i.id.split("@")[0]}\n➸ *Limit* : ${i.limit}\n`
+          }
+          reply(txt)
+        }
+        break;
+//----------------------------------------------------------------------------------
+case 'film': case 'movie': case 'moviesearch':
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+        reply(mess.waiting)
+        if (!q) return reply(`Please enter a Movie search term...\nExample: ${prefix}movie openheimar`)
+        xfarrapi.Film(q)
+          .then(data => {
+            console.log(data)
+            let krl = `*Search Term:* ${q}\n\n`
+            for (let i of data) {
+              krl += (`${prefix}----------------------------------------------------------------------------\n\n\n*Movie Name:* ${i.judul}\n *Quality :* ${i.quality}\n *Type : ${i.type}*\n *Uploaded on :* ${i.upload}\n *Source URL :* ${i.link}\n\n\n`)
+            }
+            iris.sendMessage(from, { image: { url: data[0].thumb }, caption: krl }, { quoted: fdocs })
+          });
+        break;
+//----------------------------------------------------------------------------------
+case 'wallpaper':
+case 'animewallpaper':
+case 'animewall': {
+    if (isBan) return reply(mess.banned);
+    if (isBanChat) return reply(mess.bangc);
+    reply(mess.waiting);
+    iris.sendMessage(from, { react: { text: "🥵", key: m.key } });
+
+    if (!args.join(" ")) return reply("Please enter a term to search!");
+
+    const { AnimeWallpaper } = require("anime-wallpaper");
+    const wall = new AnimeWallpaper();
+    const pages = [1, 2, 3, 4];
+    const randomPage = pages[Math.floor(Math.random() * pages.length)];
+    const wallpapers = await wall.getAnimeWall4({ title: args.join(" "), type: "sfw", page: randomPage }).catch(() => []);
+
+    const maxImagesToSend = 15;
+    const minImagesToSend = 5;
+    const imagesToSend = Math.min(maxImagesToSend, Math.max(minImagesToSend, wallpapers.length));
+
+    for (let i = 0; i < imagesToSend; i++) {
+        let message = {
+            image: { url: wallpapers[i].image },
+            footer: BotName,
+            headerType: 4
+        };
+        iris.sendMessage(m.chat, message, { quoted: m });
+    }
+}
+break;
+//----------------------------------------------------------------------------------
+case 'wikimedia':
+case 'wikiimage': {
+    if (isBan) return reply(mess.banned);
+    if (isBanChat) return reply(mess.bangc);
+    if (!args.join(" ")) return reply("What picture are you looking for??");
+
+    let { wikimedia } = require('./lib/scraper');
+    const results = await wikimedia(args.join(" "));
+    const result = results[Math.floor(Math.random() * results.length)];
+
+    let buttons = [
+        { buttonId: `${prefix}wikimedia ${args.join(" ")}`, buttonText: { displayText: 'Next Image' }, type: 1 }
+    ];
+
+    let buttonMessage = {
+        image: { url: result.image },
+        caption: `Title: ${result.title}\nSource: ${result.source}\nMedia Url: ${result.image}`,
+        footer: BotName,
+        buttons: buttons,
+        headerType: 4
+    };
+
+    iris.sendMessage(m.chat, buttonMessage, { quoted: m });
+}
+break;
+//----------------------------------------------------------------------------------
+case 'quotesimagexxx':
+case 'qoutesimagexxx':
+case 'quoteimage': {
+    if (isBan) return reply(mess.banned);
+    if (isBanChat) return reply(mess.bangc);
+    const cok = await fetchJson(`http://api.lolhuman.xyz/api/random/quotesimage?apikey=${lolkey}`);
+    reply(mess.waiting);
+    iris.sendMessage(m.chat, { image: { url: cok }, caption: 'Here it is...' }, { quoted: m });
+}
+break;
+//----------------------------------------------------------------------------------
+case 'quotesanime':
+case 'animequotes': {
+    let { quotesAnime } = require('./lib/scraper');
+    const results = await quotesAnime();
+    const result = results[Math.floor(Math.random() * results.length)];
+
+    let buttonMessage = {
+        text: `_${result.quotes}_\n\nBy '${result.karakter}', ${result.anime}\n\n- ${result.up_at}`
+    };
+
+    iris.sendMessage(m.chat, buttonMessage, { quoted: m });
+}
+break;
+//----------------------------------------------------------------------------------
+case 'animestory': {
+    if (isBan) return reply(mess.banned);
+    if (isBanChat) return reply(mess.bangc);
+    reply(mess.waiting);
+
+    try {
+        const res = await fetchJson(`https://api.jikan.moe/v4/anime?q=${q}`);
+        const sections = [];
+
+        for (let i of res.data) {
+            const list = {
+                title: `${i.title}`,
+                rows: [
+                    {
+                        title: `${i.title}\n\n`,
+                        rowId: `${prefix}animesearch ${i.mal_id}`,
+                        description: `${i.synopsis}`
+                    },
+                ]
+            };
+            sections.push(list);
+        }
+
+        const sendm = await iris.sendMessage(
+            from,
+            {
+                text: "Anime Search",
+                footer: BotName,
+                title: OwnerName,
+                buttonText: "Search Results",
+                sections
+            },
+            { quoted: m }
+        );
+    } catch (err) {
+        console.error(err);
+        reply("An error occurred while fetching anime data.");
+    }
+}
+break;
+//----------------------------------------------------------------------------------
+case 'poll': {
+    if (isBan) return reply(mess.banned);
+    if (isBanChat) return reply(mess.bangc);
+    if (!m.isGroup) return reply(mess.grouponly);
+
+    let [poll, opt] = text.split("|");
+    if (!poll || !opt || opt.split(",").length < 2) {
+        return await reply(`Mention a question and at least 2 options.\nExample: ${prefix}poll Who is the best admin?|Venox,Tobi,Kai...`);
+    }
+
+    let options = opt.split(",").map(option => option.trim());
+
+    await iris.sendMessage(m.chat, {
+        poll: {
+            name: poll.trim(),
+            values: options,
+        },
+    });
+
+    break;
+}
+//----------------------------------------------------------------------------------
+case 'creategc': {
+    if (isBan) return reply(mess.banned);
+    if (isBanChat) return reply(mess.bangc);
+    if (!isCreator) return reply(mess.botowner);
+    
+    if (!args.join(" "))
+        return reply(`Please use ${prefix + command} groupname`);
+    
+    try {
+        let groupInfo = await iris.groupCreate(args.join(" "), []);
+        let inviteCode = await iris.groupInviteCode(groupInfo.id);
+        
+        const groupCreationDate = moment(groupInfo.creation * 1000)
+            .tz("Asia/Dhaka")
+            .format("DD/MM/YYYY HH:mm:ss");
+
+        const groupOwner = groupInfo.owner.split("@")[0];
+
+        const createGroupMsg = `
+            *Create Group*
+
+Name: ${groupInfo.subject}
+Owner: @${groupOwner}
+Creation Date: ${groupCreationDate}
+
+Join Link:
+https://chat.whatsapp.com/${inviteCode}
+        `;
+
+        iris.sendMessage(m.chat, {
+            text: createGroupMsg,
+            mentions: await iris.parseMention(createGroupMsg),
+        }, { quoted: m });
+
+    } catch {
+        reply(`An error occurred while creating the group.`);
+    }
+    
+    break;
+}
+//----------------------------------------------------------------------------------
+case 'quote':
+case 'qt': {
+    if (!args[0] && !m.quoted) {
+        return m.reply(`Please provide a text (Type or mention a message)!`);
+    }
+
+    try {
+        let userPfp;
+        if (m.quoted) {
+            userPfp = await iris.profilePictureUrl(m.quoted.sender, "image");
+        } else {
+            userPfp = await iris.profilePictureUrl(m.sender, "image");
+        }
+
+        const waUserName = pushname;
+        const quoteText = m.quoted ? m.quoted.body : args.join(" ");
+
+        const quoteJson = {
+            type: "quote",
+            format: "png",
+            backgroundColor: "#FFFFFF",
+            width: 700,
+            height: 580,
+            scale: 2,
+            messages: [
+                {
+                    entities: [],
+                    avatar: true,
+                    from: {
+                        id: 1,
+                        name: waUserName,
+                        photo: {
+                            url: userPfp,
+                        },
+                    },
+                    text: quoteText,
+                    replyMessage: {},
+                },
+            ],
+        };
+
+        const quoteResponse = await axios.post("https://bot.lyo.su/quote/generate", quoteJson, {
+            headers: { "Content-Type": "application/json" },
+        });
+
+        const buffer = Buffer.from(quoteResponse.data.result.image, "base64");
+        await iris.sendImageAsSticker(m.chat, buffer, m, {
+            packname: `${global.BotName}`,
+            author: waUserName,
+        });
+    } catch (error) {
+        console.error(error);
+        m.reply("Error generating quote!");
+    }
+    break;
+}
+//----------------------------------------------------------------------------------
+case 'support': case 'supportgc': {
+    if (isBan) return reply(mess.banned);
+    if (isBanChat) return reply(mess.bangc);
+
+    await iris.sendMessage(from, { react: { text: "💫", key: m.key } });
+    reply(`⚙ *My developers Channel:*\n📶 *ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ʟɪɴᴋ:* » gg.gg/irisbotz`);
+    break;
+}
+//----------------------------------------------------------------------------------
+case 'owner': case 'creator': case 'mod': case 'mods': {
+        if (isBan) return reply(mess.banned);
+        if (isBanChat) return reply(mess.bangc);
+
+        iris.sendMessage(from, { react: { text: "💫", key: m.key } })
+        iris.sendContact(m.chat, global.Owner, m)
+      }
+        break;
+//----------------------------------------------------------------------------------
+case 'addmod':
+case 'addowner':
+  if (isBan) return reply(mess.banned);
+  if (isBanChat) return reply(mess.bangc);
+  if (!isCreator) return reply(mess.botowner);
+  iris.sendMessage(from, { react: { text: "🛡️", key: m.key } });
+
+  if (!args[0]) return reply(`Use ${prefix + command} number\nExample ${prefix + command} ${OwnerNumber}`);
+  let bnnd = args[0].replace(/[^0-9]/g, '');
+  let ceknye = await iris.isOnWhatsApp(bnnd);
+  if (!ceknye) return reply(`Enter a valid and registered number on WhatsApp!`);
+  Owner.push(bnnd);
+  fs.writeFileSync('./lib/database/mod.json', JSON.stringify(Owner));
+  reply(`Number ${bnnd} has become an owner!`);
+  break;
+//----------------------------------------------------------------------------------
+case 'delowner':
+case 'delmod':
+  if (isBan) return reply(mess.banned);
+  if (isBanChat) return reply(mess.bangc);
+  if (!isCreator) return reply(mess.botowner);
+  iris.sendMessage(from, { react: { text: "🛡️", key: m.key } });
+
+  if (!args[0]) return reply(`Use ${prefix + command} number\nExample ${prefix + command} 8801975492880`);
+  let ya = args[0].replace(/[^0-9]/g, '');
+  let unp = Owner.indexOf(ya);
+  if (unp !== -1) {
+    Owner.splice(unp, 1);
+    fs.writeFileSync('./lib/database/mod.json', JSON.stringify(Owner));
+    reply(`The number ${ya} has been deleted from the owner list!`);
+  } else {
+    reply(`The number ${ya} is not in the owner list!`);
+  }
+  break;
+//----------------------------------------------------------------------------------
+case 'modlist':
+  if (isBan) return reply(mess.banned);
+  if (isBanChat) return reply(mess.bangc);
+  if (!isCreator) return reply(mess.botowner);
+  iris.sendMessage(from, { react: { text: "🛡️", key: m.key } });
+
+  try {
+    const modData = fs.readFileSync('./lib/database/mod.json', 'utf8');
+    const mods = JSON.parse(modData);
+
+    if (mods.length === 0) {
+      reply('There are no mods in the list.');
+    } else {
+      let modList = '';
+
+      mods.forEach((mod, index) => {
+        modList += `(${index + 1}) ${iris.getName(mod)}\n`;
+      });
+
+      reply(`List of moderators:\n\n${modList}`);
+    }
+  } catch (error) {
+    console.error(error);
+    reply('Failed to fetch mod list.');
+  }
+  break;
+//----------------------------------------------------------------------------------
+case 'setbotpp':
+  if (!isCreator) return reply(mess.botowner);
+  if (isBanChat) return reply(mess.bangc);
+  iris.sendMessage(from, { react: { text: "🫡", key: m.key } });
+
+  if (!quoted) return `Send/reply with an image with caption: ${prefix + command}`;
+  if (!/^image/.test(mime)) return `Send/reply with an image with caption: ${prefix + command}`;
+  if (/webp/.test(mime)) return `Send/reply with an image with caption: ${prefix + command}`;
+  let media = await iris.downloadAndSaveMediaMessage(quoted);
+  await iris.updateProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media));
+  reply(mess.jobdone);
+  break;
+//----------------------------------------------------------------------------------
+case 'chatgpt':
+case 'ai':
+case 'gpt':
+  if (isBan) return reply(mess.banned);
+  if (isBanChat) return reply(mess.bangc);
+
+  const randomEmoji = manyemojis[Math.floor(Math.random() * manyemojis.length)];
+  iris.sendMessage(from, { react: { text: randomEmoji, key: m.key } });
+
+  if (!q) return reply(`Please provide a text query. Example: ${prefix + command} Hello, ChatGPT!`);
+
+  try {
+    const apiUrl = `https://api.maher-zubair.tech/ai/chatgptv4?q=${encodeURIComponent(q)}`;
+
+    const response = await fetch(apiUrl);
+    const responseData = await response.json();
+
+    if (response.status === 200 && responseData && responseData.status === true && responseData.data) {
+      const message = responseData.data;
+      const me = m.sender;
+      await iris.sendMessage(m.chat, { text: message, mentions: [me] }, { quoted: m });
+    } else {
+      return reply("Sorry, I couldn't fetch a response from the API at the moment.");
+    }
+  } catch (error) {
+    console.error(error);
+    reply("An error occurred while fetching the response from the API.");
+  }
+  break;
+//----------------------------------------------------------------------------------
+case 'dalle':
+case 'imgai': {
+    if (isBan) return reply(mess.banned);
+    if (isBanChat) return reply(mess.bangc);
+
+    const randomEmoji = manyemojis[Math.floor(Math.random() * manyemojis.length)];
+    await iris.sendMessage(from, { react: { text: randomEmoji, key: m.key } });
+
+    if (!q) return reply(`Please provide a query to generate an image. Example: ${prefix + command} Beautiful landscape`);
+
+    const apiUrl = `https://api.maher-zubair.tech/ai/dalle?q=${encodeURIComponent(q)}`;
+
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error("Failed to fetch image from the API");
+        
+        const imageData = await response.buffer();
+        await iris.sendMessage(m.chat, { image: imageData }, { quoted: m });
+    } catch (error) {
+        console.error(error);
+        reply("An error occurred while generating the image.");
+    }
+}
+break;
+
+//----------------------------------------------------------------------------------
+case 'mathai':
+case 'mathsai': {
+    if (isBan) return reply(mess.banned);
+    if (isBanChat) return reply(mess.bangc);
+
+    const randomEmoji = manyemojis[Math.floor(Math.random() * manyemojis.length)];
+    await iris.sendMessage(from, { react: { text: randomEmoji, key: m.key } });
+
+    if (!q) return reply(`What is your Question?`);
+
+    try {
+        const response = await fetch(`https://api.maher-zubair.tech/ai/mathssolve?q=${encodeURIComponent(q)}`);
+        if (!response.ok) throw new Error("Failed to fetch response from the API");
+        
+        const data = await response.json();
+        if (!data.result) throw new Error("Failed to get response. Please try again later");
+
+        reply(data.result);
+    } catch (error) {
+        console.error(error);
+        reply("An error occurred while processing your request.");
+    }
+}
+break;
+//----------------------------------------------------------------------------------
+case 'bardai':
+case 'bard': {
+    if (isBan) return reply(mess.banned);
+    if (isBanChat) return reply(mess.bangc);
+
+    const randomEmoji = manyemojis[Math.floor(Math.random() * manyemojis.length)];
+    await iris.sendMessage(from, { react: { text: randomEmoji, key: m.key } });
+
+    if (!q) return reply(`What is your Question?`);
+
+    try {
+        const response = await fetch(`https://api.maher-zubair.tech/ai/bard?q=${encodeURIComponent(q)}`);
+        if (!response.ok) throw new Error("Failed to fetch response from the API");
+
+        const data = await response.json();
+        if (!data.result) throw new Error("Failed to get response. Please try again later");
+
+        reply(data.result);
+    } catch (error) {
+        console.error(error);
+        reply("An error occurred while processing your request.");
+    }
+}
+break;
+//----------------------------------------------------------------------------------
+case 'blackboxai':
+case 'bbai': {
+    if (isBan) return reply(mess.banned);
+    if (isBanChat) return reply(mess.bangc);
+
+    const randomEmoji = manyemojis[Math.floor(Math.random() * manyemojis.length)];
+    await iris.sendMessage(from, { react: { text: randomEmoji, key: m.key } });
+
+    if (!q) return reply(`What is your Question?`);
+
+    try {
+        const response = await fetch(`https://api.maher-zubair.tech/ai/blackboxv4?q=${encodeURIComponent(q)}`);
+        if (!response.ok) throw new Error("Failed to fetch response from the API");
+
+        const data = await response.json();
+        if (!data.result) throw new Error("Failed to get response. Please try again later");
+
+        reply(data.result);
+    } catch (error) {
+        console.error(error);
+        reply("An error occurred while processing your request.");
+    }
+}
+break;
+//----------------------------------------------------------------------------------
+case 'photoleapai': {
+    if (isBan) return reply(mess.banned);
+    if (isBanChat) return reply(mess.bangc);
+
+    const randomEmoji = manyemojis[Math.floor(Math.random() * manyemojis.length)];
+    await iris.sendMessage(from, { react: { text: randomEmoji, key: m.key } });
+
+    if (!q) return reply(`What is your Question?`);
+
+    try {
+        const response = await fetch(`https://api.maher-zubair.tech/ai/photoleap?q=${encodeURIComponent(q)}`);
+        if (!response.ok) throw new Error("Failed to fetch response from the API");
+
+        const data = await response.json();
+        if (!data.result) throw new Error("Failed to get response. Please try again later");
+
+        reply(data.result);
+    } catch (error) {
+        console.error(error);
+        reply("An error occurred while processing your request.");
+    }
+}
+break;
+//----------------------------------------------------------------------------------
+case 'lamaai': {
+    if (isBan) return reply(mess.banned);
+    if (isBanChat) return reply(mess.bangc);
+
+    const randomEmoji = manyemojis[Math.floor(Math.random() * manyemojis.length)];
+    await iris.sendMessage(from, { react: { text: randomEmoji, key: m.key } });
+
+    if (!q) return reply(`What is your Question?`);
+
+    try {
+        const response = await fetch(`https://api.maher-zubair.tech/ai/llama-2?q=${encodeURIComponent(q)}`);
+        if (!response.ok) throw new Error("Failed to fetch response from the API");
+
+        const data = await response.json();
+        if (!data.result) throw new Error("Failed to get response. Please try again later");
+
+        reply(data.result);
+    } catch (error) {
+        console.error(error);
+        reply("An error occurred while processing your request.");
+    }
+}
+break;
+//----------------------------------------------------------------------------------
+case 'gemini': {
+    if (isBan) return reply(mess.banned);
+    if (isBanChat) return reply(mess.bangc);
+
+    const randomEmoji = manyemojis[Math.floor(Math.random() * manyemojis.length)];
+    await iris.sendMessage(from, { react: { text: randomEmoji, key: m.key } });
+
+    if (!q) return reply(`What is your Question?`);
+
+    try {
+        const response = await fetch(`https://api.maher-zubair.tech/ai/gemini?q=${encodeURIComponent(q)}`);
+        if (!response.ok) throw new Error("Failed to fetch response from the API");
+
+        const data = await response.json();
+        if (!data.result) throw new Error("Failed to get response. Please try again later");
+
+        reply(data.result);
+    } catch (error) {
+        console.error(error);
+        reply("An error occurred while processing your request.");
+    }
+}
+break;
+//----------------------------------------------------------------------------------
+case 'gcsetting':
+case 'groupsetting': {
+    if (isBan) return reply(mess.banned);
+    if (isBanChat) return reply(mess.bangc);
+    await iris.sendMessage(from, { react: { text: "🫡", key: m.key } });
+
+    const commands = [
+        ['group open', 'group close'],
+        ['leveling on', 'leveling off'],
+        ['antilinkgc on', 'antilinkgc off'],
+        ['antilinktg on', 'antilinktg off'],
+        ['antilinktt on', 'antilinktt off'],
+        ['antilinkytch on', 'antilinkytch off'],
+        ['antilinkytvid on', 'antilinkytvid off'],
+        ['antilinkig on', 'antilinkig off'],
+        ['antilinkfb on', 'antilinkfb off'],
+        ['antilinktwit on', 'antilinktwit off'],
+        ['antilinkall on', 'antilinkall off'],
+        ['antiwame on', 'antiwame off']
+    ];
+
+    const listTitles = [
+        'Group open/close',
+        'Leveling on/off',
+        'Antilink Group on/off',
+        'Antilink Telegram on/off',
+        'Antilink Tiktok on/off',
+        'Antilink Youtube Channel on/off',
+        'Antilink Youtube Video on/off',
+        'Antilink Instagram on/off',
+        'Antilink Facebook on/off',
+        'Antilink Twitter on/off',
+        'Antilink All on/off',
+        'Anti Wame on/off'
+    ];
+
+    const descriptions = ['Activate', 'Deactivate'];
+    const featureNames = [
+        'Group', 'Leveling', 'Auto Sticker', 'Antilink Group',
+        'Antilink Telegram', 'Antilink Tiktok', 'Antilink Youtube Channel',
+        'Antilink Youtube Video', 'Antilink Instagram', 'Antilink Facebook',
+        'Antilink Twitter', 'Antilink All', 'Anti Wame', 'Auto Revoke'
+    ];
+
+    let sections = [];
+
+    commands.forEach((commandPair, index) => {
+        const [commandOn, commandOff] = commandPair;
+        const section = {
+            title: listTitles[index],
+            rows: [
+                {
+                    title: descriptions[0],
+                    description: `Activate ${featureNames[index]}`,
+                    rowId: `${prefix}${commandOn}`
+                },
+                {
+                    title: descriptions[1],
+                    description: `Deactivate ${featureNames[index]}`,
+                    rowId: `${prefix}${commandOff}`
+                }
+            ]
+        };
+        sections.push(section);
+    });
+
+    try {
+        await iris.sendMessage(from, {
+            text: "Group Settings",
+            sections
+        }, { quoted: m });
+    } catch (error) {
+        console.error(error);
+        reply("An error occurred while sending the message.");
+    }
+}
+break;
+//----------------------------------------------------------------------------------
+case 'emojimix': {
+    if (isBan) return reply(mess.banned);
+    if (isBanChat) return reply(mess.bangc);
+    await iris.sendMessage(from, { react: { text: "🫡", key: m.key } });
+
+    if (!q) return reply(`*Example:* ${prefix + command} 😊+🌹`);
+    
+    const [emoji1, emoji2] = q.split("+");
+
+    try {
+        const response = await fetch(`https://tenor.googleapis.com/v2/featured?key=API_KEY_HERE&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`);
+        const data = await response.json();
+
+        if (!data.results || data.results.length === 0) {
+            return reply("Failed to find mixed emoji.");
+        }
+
+        for (const result of data.results) {
+            const encmedia = await iris.sendImageAsSticker(from, result.url, m, { packname: global.packname, author: global.author, categories: result.tags });
+            await fs.unlinkSync(encmedia);
+        }
+    } catch (error) {
+        console.error(error);
+        reply("An error occurred while processing your request.");
+    }
+}
+break;
+//----------------------------------------------------------------------------------
+case 'nsfw': {
+    if (isBan) return reply(mess.banned);
+    if (isBanChat) return reply(mess.bangc);
+    if (!m.isGroup) return reply(mess.grouponly);
+    if (!isBotAdmins) return reply(mess.botadmin);
+    if (!isAdmins && !isCreator) return reply(mess.useradmin);
+    await iris.sendMessage(from, { react: { text: "⚠️", key: m.key } });
+
+    if (args[0] === "on") {
+        if (ntnsfw.includes(from)) return reply('NSFW commands are already enabled in this group.');
+        ntnsfw.push(from);
+        reply('Enabled NSFW commands in this group!');
+    } else if (args[0] === "off") {
+        if (!ntnsfw.includes(from)) return reply('NSFW commands are already disabled in this group.');
+        const index = ntnsfw.indexOf(from);
+        if (index !== -1) ntnsfw.splice(index, 1);
+        reply('Disabled NSFW commands in this group!');
+    } else {
+        reply(`NSFW (not safe for work) feature is currently ${ntnsfw.includes(from) ? 'enabled' : 'disabled'} in this group.\n\nTo enable NSFW commands, use *'${prefix}nsfw on'*.\nTo disable NSFW commands, use *'${prefix}nsfw off'*.`);
+    }
 }
 break;
 //----------------------------------------------------------------------------------
