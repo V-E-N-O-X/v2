@@ -1,9 +1,9 @@
 {
   "name": "IRIS-MD",
   "version": "2.0.9",
-  "description": "Simple lightweight whatsapp bot",
+  "description": "Your Whatsapp Assistant",
   "keywords": ["whatsapp", "bot", "md", "multi-device"],
-  "repository": "https://github.com/V-E-N-O-X/IRIS-MD",
+  "repository": "https://github.com/V-E-N-O-X/v2",
   "stack": "container",
   "env": {
     "SESSION_ID": {
@@ -15,27 +15,28 @@
       "required": true,
       "value": "."
     },
-    "SUDO": {
-      "description": "Enter Numbers With Country Code Without +",
-      "required": true,
-      "value": "8801975492880"
-    },
-    "BOT_NAME": {
-      "description": "Enter the botname",
-      "required": false,
-      "value": "ɪʀɪꜱ-ᴍᴅ"
-    },
-    "OWNER_NAME": {
-      "description": "enter your ownername",
+     "OWNER_NAME": {
+      "description": "Put your OwnerName here",
       "required": false,
       "value": "VenoxSenpai"
+    },
+     "BOT_NAME": {
+      "description": "Put your BotName here",
+      "required": false,
+      "value": "Iris-Md"
+    },
+    "SUDO": {
+      "description": "Enter Numbers With Country Code and Without (+)",
+      "required": true,
+      "value": "8801975492880"
+    }
   },
   "buildpacks": [
     {
       "url": "heroku/nodejs"
     },
     {
-      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
     },
     {
       "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
