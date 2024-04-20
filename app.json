@@ -15,12 +15,12 @@
       "required": true,
       "value": "."
     },
-     "OWNER_NAME": {
+    "OWNER_NAME": {
       "description": "Put your OwnerName here",
       "required": false,
       "value": "VenoxSenpai"
     },
-     "BOT_NAME": {
+    "BOT_NAME": {
       "description": "Put your BotName here",
       "required": false,
       "value": "Iris-Md"
