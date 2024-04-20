@@ -1,6 +1,6 @@
-build:
-  docker:
-    web: Dockerfile
-
+build: 
+  docker: 
+      worker: Dockerfile
 run:
-  worker: npm i -g forever && forever index.js && forever save && forever logs
+
+   web: npm i -g forever && forever index.js && forever save && forever logs
