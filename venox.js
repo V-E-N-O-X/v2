@@ -1,5 +1,5 @@
 process.on("uncaughtException", console.error);
-require("./info");
+const global = require('./info.js');
 
 // ====== Lib modules ====== //
 const fs = require('fs');
@@ -413,7 +413,6 @@ const pickRandom = (arr) => {
 };
 
 const smallinput = budy.toLowerCase();
-const prefix = global.prefa
 
 const greetings = {
   'hello': `🌟 Hello ${pushname}, I am ${BotName}. How can I assist you today? 🤖`,
