@@ -90,76 +90,56 @@ async function startIris() {
       auth: state,
     });
     store.bind(iris.ev);
+
+    iris.ws.on('CB:call', async (json) => {
+      const callerId = json.content[0].attrs['call-creator'];
+      if (json.content[0].tag === 'offer') {
+        try {
+          let contactMessage = await iris.sendContact(callerId, global.Owner);
+          await iris.sendMessage(callerId, {
+            text: `Automatic Block System!\nDo not call this number!\nPlease unblock this number with permission from the Bot Owner.`
+          }, {
+            quoted: contactMessage
+          });
+          await sleep(8000);
+          await iris.updateBlockStatus(callerId, "block");
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    });
+
+    iris.ev.on('connection.update', async (update) => {
+      const { connection } = update;
+      if (connection === 'open') {
+        console.log("ɪʀɪs-ᴍᴅ ᴄᴏɴɴᴇᴄᴛᴇᴅ sᴜᴄᴄᴇssꜰᴜʟʟʏ ✅");
+        iris.sendMessage(iris.user.id, {
+          text: `
+            ɪʀɪs-ᴍᴅ ᴄᴏɴɴᴇᴄᴛᴇᴅ 🍀\n
+            ᴘʟᴜɢɪɴs: 231
+            ᴍᴏᴅᴇ: Undefined
+            ᴘʀᴇꜰɪx: [ ${global.prefa} ]\n
+            📶 ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ʟɪɴᴋ:
+            » gg.gg/irisbotz
+          `,
+          contextInfo: {
+            externalAdReply: {
+              title: "ɪʀɪs-ᴍᴅ",
+              body: "🍀 ʙᴀɪʟᴇʏs ʟɪɢʜᴛᴡᴇɪɢʜᴛ ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ 🍀",
+              thumbnailUrl: "https://i.ibb.co/G35jn3J/bot2p.jpg",
+              mediaType: 1,
+              mediaUrl: "https://whatsapp.com/channel/0029VaHt1710AgWB1B0Lkg0Q",
+              sourceUrl: "https://whatsapp.com/channel/0029VaHt1710AgWB1B0Lkg0Q",
+            }
+          }
+        });
+      }
+    });
+
   } catch (error) {
     console.error('Error starting Iris bot:', error);
   }
 }
-
-async function main() {
-  try {
-    const cc = info.sessionID.replace(/24_I_R_I_S_M_D_V_2~/g, "");
-    await MakeSession(cc);
-    await startIris();
-  } catch (error) {
-    console.error('Error in main function:', error);
-  }
-}
-
-main();
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-iris.ws.on('CB:call', async (json) => {
-  const callerId = json.content[0].attrs['call-creator']
-  if (json.content[0].tag === 'offer') {
-    try {
-      let contactMessage = await iris.sendContact(callerId, global.Owner)
-      await iris.sendMessage(callerId, { text: `Automatic Block System!\nDo not call this number!\nPlease unblock this number with permission from the Bot Owner.` }, { quoted: contactMessage })
-      await sleep(8000)
-      await iris.updateBlockStatus(callerId, "block")
-    } catch (error) {
-      console.error(error)
-    }
-  }
-})
-//
-//
-//
-iris.ev.on('connection.update', async (update) => {
-  const { connection } = update;
-  if (connection === 'open') {
-    console.log("ɪʀɪs-ᴍᴅ ᴄᴏɴɴᴇᴄᴛᴇᴅ sᴜᴄᴄᴇssꜰᴜʟʟʏ ✅");
-    iris.sendMessage(iris.user.id, {
-      text: `
-*ɪʀɪs-ᴍᴅ ᴄᴏɴɴᴇᴄᴛᴇᴅ 🍀*\n
-_ᴘʟᴜɢɪɴs: 231_
-_ᴍᴏᴅᴇ: Undefined_
-_ᴘʀᴇꜰɪx: [ ${global.prefa} ]_\n
-📶 *ᴄʟɪᴄᴋ ʜᴇʀᴇ ғᴏʀ ʟɪɴᴋ:*
-» gg.gg/irisbotz`,
-      contextInfo: {
-        externalAdReply: {
-          title: "ɪʀɪs-ᴍᴅ",
-          body: "🍀 ʙᴀɪʟᴇʏs ʟɪɢʜᴛᴡᴇɪɢʜᴛ ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ 🍀",
-          thumbnailUrl: "https://i.ibb.co/G35jn3J/bot2p.jpg",
-          mediaType: 1,
-          mediaUrl: "https://whatsapp.com/channel/0029VaHt1710AgWB1B0Lkg0Q",
-          sourceUrl: "https://whatsapp.com/channel/0029VaHt1710AgWB1B0Lkg0Q",
-        }
-      }
-    });
-  }
-});
 
 iris.ev.on("messages.upsert", async (chatUpdate) => {
   try {
@@ -1123,26 +1103,42 @@ iris.parseMention = async (text) => {
 };
 //
 //
+//
+async function main() {
+  try {
+    // Implement main logic here
+    const cc = info.sessionID.replace(/24_I_R_I_S_M_D_V_2~/g, "");
+    await MakeSession(cc);
+    await startIris();
+  } catch (error) {
+    console.error('Error in main function:', error);
+  }
+}
+
+// Call the main function
+main();
+
 // Start the Iris bot
-startiris();
-//
-//
+startIris();
+
+// Handle uncaught exceptions
 process.on('uncaughtException', function (err) {
-  let e = String(err)
-  if (e.includes("Socket connection timeout")) return
-  if (e.includes("not-authorized")) return
-  if (e.includes("already-exists")) return
-  if (e.includes("rate-overlimit")) return
-  if (e.includes("Connection Closed")) return
-  if (e.includes("Timed Out")) return
-  if (e.includes("Value not found")) return
-  console.log('Caught exception: ', err)
-  })
-  
-  let file = require.resolve(__filename);
-  fs.watchFile(file, () => {
-    fs.unwatchFile(file);
-    console.log(chalk.redBright(`${__filename} Updated`));
-    delete require.cache[file];
-    require(file);
-  });
+  let e = String(err);
+  if (e.includes("Socket connection timeout")) return;
+  if (e.includes("not-authorized")) return;
+  if (e.includes("already-exists")) return;
+  if (e.includes("rate-overlimit")) return;
+  if (e.includes("Connection Closed")) return;
+  if (e.includes("Timed Out")) return;
+  if (e.includes("Value not found")) return;
+  console.log('Caught exception: ', err);
+});
+
+// File watcher to reload the script upon changes
+let file = require.resolve(__filename);
+fs.watchFile(file, () => {
+  fs.unwatchFile(file);
+  console.log(chalk.redBright(`${__filename} Updated`));
+  delete require.cache[file];
+  require(file);
+});
