@@ -18,7 +18,7 @@ const {
 //
 const fs = require("fs");
 const axios = require('axios');
-const { atob } = require('atob');
+const atob = require('atob');
 const pino = require("pino");
 const chalk = require("chalk");
 const FileType = require("file-type");
