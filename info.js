@@ -28,7 +28,7 @@ const config = {
     autoreadgc: true,
     BotLogo: fs.readFileSync("./lib/assets/iris1.jpg"),
     Thumb: fs.readFileSync("./lib/assets/iris2.jpg"),
-    Thumb1: fs.readFileSync("./lib/Assets/iris3.jpg"),
+    Thumb1: fs.readFileSync("./lib/assets/iris3.jpg"),
     ErrorPic: fs.readFileSync("./lib/assets/iris4.jpg"),
     links: {
         ntilinkytvid: ["https://youtube.com"], 
