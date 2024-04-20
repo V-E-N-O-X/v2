@@ -16,9 +16,8 @@ const {
   proto,
 } = require("@whiskeysockets/baileys");
 //
-const fs = require("fs");
+const fs = require("fs-extra");
 const axios = require('axios');
-const atob = require('atob');
 const pino = require("pino");
 const chalk = require("chalk");
 const FileType = require("file-type");
@@ -56,21 +55,14 @@ const { color } = require("./lib/color");
 async function MakeSession(cc) {
   try {
     const sessionPath = __dirname + '/lib/session/creds.json';
-    if (!fs.existsSync(sessionPath)) {
-      if (cc.length < 30) {
-        const { data } = await axios.get('https://paste.c-net.org/' + cc);
-        await fs.writeFileSync(sessionPath, atob(data), "utf8");
-      } else {
-        const c = atob(cc);
-        await fs.writeFileSync(sessionPath, c, "utf8");
-      }
+    if (!await fs.pathExists(sessionPath)) {
+      await fs.writeFile(sessionPath, cc, "utf8");
     }
   } catch (error) {
     console.error('Error creating session:', error);
   }
 }
-//
-//
+
 async function startIris() {
   try {
     console.log(
@@ -78,7 +70,7 @@ async function startIris() {
         figlet.textSync("Iris-2.0", {
           font: "Standard",
           horizontalLayout: "default",
-          vertivalLayout: "default",
+          verticalLayout: "default",
           whitespaceBreak: false,
         }),
         "green"
@@ -86,55 +78,33 @@ async function startIris() {
     );
     console.log(color('\nHello, I am VenoxSenpai, Developer of this Bot\n\nThanks for using: Iris-MD Whatasapp Bot.', 'aqua'));
     console.log(color('\nYou can follow me on GitHub: V-E-N-O-X', 'aqua'));
-    //
-    //
-    //
-    //
+
     const { state } = await useMultiFileAuthState("./lib/session");
-    //
-    //
-    //
-    //
     const store = makeInMemoryStore({
       logger: pino().child({ level: "silent", stream: "store" }),
     });
-    //
-    //
-    //
-    //
     const iris = irisConnect({
       logger: pino({ level: "silent" }),
       printQRInTerminal: true,
       browser: ["iris Bot", "Safari", "3.O"],
       auth: state,
     });
-    //
-    //
-    //
     store.bind(iris.ev);
   } catch (error) {
     console.error('Error starting Iris bot:', error);
   }
 }
-//
-//
+
 async function main() {
   try {
-    //
-    //
     const cc = info.sessionID.replace(/24_I_R_I_S_M_D_V_2~/g, "");
-    //
-    //
     await MakeSession(cc);
-    //
-    //
     await startIris();
   } catch (error) {
     console.error('Error in main function:', error);
   }
 }
-//
-//
+
 main();
 //
 //
