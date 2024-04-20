@@ -1,4 +1,4 @@
-require("./info.js");
+const global = require('./info.js');
 //
 //
 const {
