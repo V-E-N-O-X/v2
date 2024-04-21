@@ -3,12 +3,12 @@ Iris-Md-2.0
  Coded By VenoxSenpai
 
 Modified File : info.js
-Modified Date : 04/20/2024
+Modified Date : 04/21/2024
 */
 
 
 const fs = require("fs");
-const config = {
+const global = {
     owner: process.env.SUDO || ["8801853262586", "8801928502256"],
     prefa: process.env.PREFIX || ["."],
     OwnerName: process.env.OWNER_NAME || "VenoxSenpai",
