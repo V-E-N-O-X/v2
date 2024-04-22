@@ -6,10 +6,6 @@
   "repository": "https://github.com/V-E-N-O-X/v2",
   "stack": "container",
   "env": {
-    "SESSION_ID": {
-      "description": "paste Your Session ID",
-      "required": true
-    },
     "PREFIX": {
       "description": "Enter Prefix For Commands",
       "required": true,
