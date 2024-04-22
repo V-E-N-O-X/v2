@@ -12,7 +12,7 @@ const global = {
     owner: process.env.SUDO || ["8801853262586", "8801928502256"],
     prefa: process.env.PREFIX || ["."],
     OwnerName: process.env.OWNER_NAME || "VenoxSenpai",
-    sessionID: process.env.SESSION_ID || "",
+    sessionID: "session",
     BotName: process.env.BOT_NAME || "iris-md",
     gptapi: process.env.GPT_API || "",
     packname: "Iris Bot",
