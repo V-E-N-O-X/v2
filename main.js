@@ -306,24 +306,28 @@ Venox.ev.on('group-participants.update', async (anu) => {
                     const venoxtime = moment.tz('Asia/Dhaka').format('HH:mm:ss');
                     const venoxdate = moment.tz('Asia/Dhaka').format('DD/MM/YYYY');
                     const venoxmembers = metadata.participants.length;
+                    let mono = "```";
                     venoxbody = `
-✨ Welcome to ${metadata.subject}! ✨
-
-👤 ${venoxName.split("@")[0]}
-🕒 Joined: ${venoxtime} ${venoxdate}
-👥 Members: ${venoxmembers}
+❖━━━━━━━━━[ ᴡᴇʟᴄᴏᴍᴇ ]━━━━━━━━━❖
+│
+│ 🌈 ${mono}${venoxName.split("@")[0]}${mono}
+│ 🍀 ${mono}Joined: ${venoxtime} ${venoxdate}${mono}
+│ 👥 ${mono}Members: ${venoxmembers}${mono}
+❖━━━━━━━━━━━━━━━━━━━━━━━━━━━━━❖
 `;
                 } else if (anu.action === 'remove') {
                     const venoxtime = moment.tz('Asia/Dhaka').format('HH:mm:ss');
                     const venoxdate = moment.tz('Asia/Dhaka').format('DD/MM/YYYY');
                     let venoxName = num;
                     const venoxmembers = metadata.participants.length;
+                    let moni = "```";
                     venoxbody = `
-🌿 Farewell from ${metadata.subject} 🌿
-
-👤 ${venoxName.split("@")[0]}
-🕒 Left: ${venoxtime} ${venoxdate}
-👥 Members: ${venoxmembers}
+❖━━━━━━━━━[ ʟᴇᴀᴠɪɴɢ ]━━━━━━━━━❖
+│
+│ 🌈 ${moni}${venoxName.split("@")[0]}${moni}
+│ 🎌 ${moni}Left: ${venoxtime} ${venoxdate}${moni}
+│ 👥 ${moni}Members: ${venoxmembers}${moni}
+❖━━━━━━━━━━━━━━━━━━━━━━━━━━━━━❖
 `;
                 }
                 Venox.sendMessage(anu.id,
