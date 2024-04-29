@@ -35,6 +35,10 @@ global.link = 'https://gg.gg/irisbotz';
 // v3 is video menu,
 // v4 is call end menu
 global.typemenu = process.env.MENU_TYPES || 'v1';
+// Links For Menus
+//
+global.botpic = process.env.BOT_PIC || 'https://i.ibb.co/G35jn3J/bot2p.jpg';
+global.thumb = 'https://i.ibb.co/2Fxnv8W/bot2.jpg';
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -44,6 +48,7 @@ global.typemenu = process.env.MENU_TYPES || 'v1';
 global.autoread = process.env.AUTO_READ_MSG || false;
 global.autobio = process.env.AUTO_BIO || false;
 global.autoswview = process.env.AUTO_STS_SEEN || false;
+global.welcome = process.env.WELCOME_MSG || false;
 //
 //
 global.autoRecording = false;
@@ -84,7 +89,6 @@ global.mess = {
 
 
 
-global.thumb = fs.readFileSync('./XeonMedia/thumb.jpg');
 let file = require.resolve(__filename);
 fs.watchFile(file, () => {
     fs.unwatchFile(file);
