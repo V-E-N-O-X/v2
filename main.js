@@ -186,7 +186,7 @@ Venox.ev.on("connection.update", async (s) => {
     Venox.sendMessage(Venox.user.id, {
         text: `*ɪʀɪs-ᴍᴅ ᴄᴏɴɴᴇᴄᴛᴇᴅ*🍀\n
         _ᴠᴇʀsɪᴏɴ: 2.0.9_
-        _ᴘʀᴇꜰɪx: ${global.prefa}_
+        _ᴘʀᴇꜰɪx: [ ${global.prefa} ]_
         _ᴅᴀᴛᴀʙᴀsᴇ: Public_`,
         contextInfo: {
             externalAdReply: {
