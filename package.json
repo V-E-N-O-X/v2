@@ -6,16 +6,13 @@
     "type": "commonjs",
     "directories": {
         "lib": "lib",
-        "database": "database",
-        "session": "session",
-        "media": "media"
     },
     "scripts": {
-        "start": "pm2 start main.js --deep-monitoring --attach --name Suhail",
-        "stop": "pm2 stop Suhail"
+        "start": "pm2 start main.js --deep-monitoring --attach --name IrisBotz",
+        "stop": "pm2 stop IrisBotz"
     },
     "author": "VenoxSenpai",
-    "license": "MIT",
+    "license": "Apache-2.0",
     "dependencies": {
         "@whiskeysockets/baileys": "^6.5.0",
         "@adiwajshing/keyed-db": "^0.2.4",
