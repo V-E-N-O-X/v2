@@ -1,0 +1,27 @@
+{
+  "name": "sp",
+  "version": "2.0.9",
+  "description": "A modular advanced wabot",
+  "keywords": ["sp"],
+  "env": {
+    "SESSION_ID": {
+      "description": "Session Id",    
+      "value": "",
+      "required" :true
+    }  
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs#latest"
+    },
+    {
+      "url": "https://github.com/DuckyTeam/heroku-buildpack-imagemagick.git"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ]
+}
