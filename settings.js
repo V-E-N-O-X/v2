@@ -54,7 +54,6 @@ global.welcome = process.env.WELCOME_MSG || false;
 global.autoRecording = false;
 global.autoTyping = false;
 global.autorecordtype = false;
-global.anti92 = false;
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
