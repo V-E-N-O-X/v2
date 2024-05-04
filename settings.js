@@ -70,19 +70,19 @@ global.ownername = '𝖁𝖊𝖓𝖔𝖝𝕾𝖊𝖓𝖕𝖆𝖎';
 
 // ~~~~~~~~~~~~~~~『 ᴍᴇssᴀɢᴇs! 』~~~~~~~~~~~~~~~~~~
 global.mess = {
-    done: '✨ *Task complete, senpai!* ✨',
-    prem: '🔒 *Apologies,* but this feature is exclusively for premium users, *senpai-sama.*',
-    admin: '🛡️ *Only the mightiest administrators* possess the power to wield this feature, *dearest senpai!*',
-    botAdmin: '🤖 The bot must *attain the rank of administrator* to access this feature, *senpai-sama!*',
-    owner: '👑 This privilege is *reserved for the chosen one alone,* *honorable senpai-sama.*',
-    group: '👥 Gather your allies, for this feature is *meant for group chats* exclusively, *esteemed senpai!*',
-    private: '🔒 Let us converse in secrecy, for this feature is *intended for private chats* alone, *noble senpai-sama.*',
-    nolink: 'Please provide me with a *link,* *Baka!* 🙏',
-    banned: 'You have been *Banned* from issuing commands, *Baka!* 😠',
-    bangc: 'This group has been *Banned* from issuing commands, *Baka!* 😡',
-    nonsfw: 'Behold! This realm is *not meant for the lewd,* *Baka!* Keep it *SFW!* 😳',
-    wait: '⏳ *Fear not,* for progress moves steadily but surely... ',    
-    error: '❌ *Oh no!* An error has emerged on the battlefield! 💥',
+    done: '✨```Task complete, senpai!``` ✨',
+    prem: '🔒```Apologies, but this feature is exclusively for premium users!```',
+    admin: '🛡️```Only the mightiest administrators possess the power to wield this feature!```',
+    botAdmin: '🤖```The bot must attain the rank of administrator to access this feature!```',
+    owner: '👑```This privilege is reserved for the chosen one alone, honorable senpai-sama.```',
+    group: '👥```Gather your allies, for this feature is *meant for group chats* exclusively, esteemed senpai!```',
+    private: '🔒```Let us converse in secrecy, for this feature is *intended for private chats* alone, noble senpai-sama.```',
+    nolink: '```Please provide me with a link!```🙏',
+    banned: '```You have been *Banned* from issuing commands!```😠',
+    bangc: '```This group has been *Banned* from issuing commands!```😡',
+    nonsfw: '```Behold! This realm is *not meant for the lewd,* Keep it *SFW!*```😳',
+    wait: '⏳```Fear not, for progress moves steadily but surely...```',    
+    error: '```*Oh no!* An error has emerged on the battlefield!``` 💥',
 };
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
