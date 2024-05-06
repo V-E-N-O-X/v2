@@ -8,7 +8,8 @@ global.ownernomer = process.env.SUDO?.split(",") || ["8801853262586"];
 global.prefa = process.env.PREFIX?.split(",") || ['.'];
 global.ownername = process.env.SUDO_NAME || "🍀 Sleeping Venox";
 global.botname = process.env.BOT_NAME || 'ⁱʳⁱˢ ᵇᵃⁱˡᵉʸˢ ᵐᵈ';
-global.SESSION_ID = process.env.SESSION_ID || '24_I_R_I_S_M_D_V_2~LethalMelting',
+global.alivemsg = process.env.ALIVE_MSG || 'ɪᴍ sᴛɪʟʟ ᴜᴘ ᴀɴᴅ ʀᴜɴɴɪɴɢ!🔮';
+global.SESSION_ID = process.env.SESSION_ID || '',
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -48,7 +49,7 @@ global.thumb = 'https://i.ibb.co/2Fxnv8W/bot2.jpg';
 global.autoread = process.env.AUTO_READ_MSG || false;
 global.autobio = process.env.AUTO_BIO || false;
 global.autoswview = process.env.AUTO_STS_SEEN || false;
-global.welcome = process.env.WELCOME_MSG || false;
+global.welcome = process.env.WELCOME_MSG || true;
 //
 //
 global.autoRecording = false;
