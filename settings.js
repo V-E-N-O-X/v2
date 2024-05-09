@@ -10,6 +10,7 @@ global.ownername = process.env.SUDO_NAME || "🍀 Sleeping Venox";
 global.botname = process.env.BOT_NAME || 'ⁱʳⁱˢ ᵇᵃⁱˡᵉʸˢ ᵐᵈ';
 global.alivemsg = process.env.ALIVE_MSG || 'ɪᴍ sᴛɪʟʟ ᴜᴘ ᴀɴᴅ ʀᴜɴɴɪɴɢ!🔮';
 global.SESSION_ID = process.env.SESSION_ID || '',
+global.mongourl = process.env.MONGO_URL || '',
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
