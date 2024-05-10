@@ -1,7 +1,6 @@
 // ====== MAIN-VARS_SETTINGS ======= //
 process.on("uncaughtException", console.error);
 require("./settings");
-//
 
 
 // ===== JUST MODULES ===== //
