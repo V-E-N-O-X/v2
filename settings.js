@@ -5,6 +5,7 @@ const fs = require('fs');
 
 // ~~~~~~~~~~~~~~~『 🇲‌🇦‌🇮‌🇳‌-🇸‌🇪‌🇹‌🇹‌🇮‌🇳‌🇬‌🇸‌ 』~~~~~~~~~~~~~~~~~~
 global.ownernomer = process.env.SUDO?.split(",") || ["8801853262586"];
+global.premium = process.env.PREMIUM?.split(",") || ["8801853262586"];
 global.prefa = process.env.PREFIX?.split(",") || ['.'];
 global.ownername = process.env.SUDO_NAME || "🍀 Sleeping Venox";
 global.botname = process.env.BOT_NAME || 'ⁱʳⁱˢ ᵇᵃⁱˡᵉʸˢ ᵐᵈ';
