@@ -33,12 +33,10 @@ global.link = 'https://gg.gg/irisbotz';
 
 // ~~~~~~~~~~~~~~~『 🇲‌🇪‌🇳‌🇺‌ 🇹‌🇾‌🇵‌🇪‌🇸‌ 』~~~~~~~~~~~~~~~~~~
 // Menu type 
-// v1 is image menu, 
-// v2 is link + image menu,
-// v3 is video menu,
-// v4 is call end menu
+// v1 is link + image menu,
+// v2 is video menu,
+// v3 is button menu
 global.typemenu = process.env.MENU_TYPES || 'v1';
-// Links For Menus
 //
 global.botpic = process.env.BOT_PIC || 'https://i.ibb.co/G35jn3J/bot2p.jpg';
 global.thumb = 'https://i.ibb.co/2Fxnv8W/bot2.jpg';
