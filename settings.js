@@ -38,7 +38,8 @@ global.link = 'https://gg.gg/irisbotz';
 // v3 is button menu
 global.typemenu = process.env.MENU_TYPES || 'v1';
 //
-global.botpic = process.env.BOT_PIC || 'https://i.ibb.co/G35jn3J/bot2p.jpg';
+global.vidmenu = 'https://i.imgur.com/s1XbCFo.mp4';
+global.botpic = 'https://i.ibb.co/G35jn3J/bot2p.jpg';
 global.thumb = 'https://i.ibb.co/2Fxnv8W/bot2.jpg';
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
