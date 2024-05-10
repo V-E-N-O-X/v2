@@ -91,6 +91,32 @@ global.mess = {
 
 
 
+
+
+// ~~~~~~~~~~~~~~~『 ᴀ‌🇵🇮‌‌s! 』~~~~~~~~~~~~~~~~~~
+global.limitawal = {
+  premium: "Infinity",
+  free: 2,
+  monayawal: 1000,
+};
+//
+global.limitawal = {
+  rakyat: "Infinity",
+  free: 100,
+};
+//
+global.APIs = {
+  zenz: "https://zenzapis.xyz",
+};
+//
+global.APIKeys = {
+  "https://zenzapis.xyz": "5d1197db351b",
+};
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
 let file = require.resolve(__filename);
 fs.watchFile(file, () => {
     fs.unwatchFile(file);
