@@ -1,9 +1,8 @@
-// ====== MAIN-VARS_SETTINGS ======= //
 process.on("uncaughtException", console.error);
 require("./settings");
 
 
-// ===== JUST MODULES ===== //
+
 const fs = require('fs')
 const os = require('os')
 const fsx = require('fs-extra')
@@ -40,7 +39,7 @@ const manyemojis = ["😄", "👍", "👏", "👌", "🥇", "🌟", "🎉", "�
 
 
 
-// ====== IMPORTED MODULES ======= //
+
 const settings = require('./settings')
 const { TelegraPh, UploadFileUgu, webp2mp4File, floNime } = require('./lib/uploader')
 const { toAudio, toPTT, toVideo, ffmpeg, addExifAvatar } = require('./lib/converter')
@@ -57,10 +56,10 @@ const { fetchBuffer, buffergif } = require("./lib/myfunc2")
 
 
 
-// ====== DATABASE ====== //
+
 const { venoxtext1 } = require('./lib/bugs/venoxtext1')
-//
-//
+
+
 let premium = global.premium || settings.PREMIUM || "8801853262586";
 let isSleeping = false;
 let banUser = JSON.parse(fs.readFileSync('./lib/database/banUser.json'));
@@ -89,8 +88,8 @@ let owner = global.ownernomer || settings.SUDO || "8801853262586";
 let _afk = JSON.parse(fs.readFileSync('./lib/database/afk-user.json'))
 let hit = JSON.parse(fs.readFileSync('./lib/database/total-hit-user.json'))
 
-//
-//
+
+
 const VoiceNoteVenox = JSON.parse(fs.readFileSync('./lib/database/autoreply/vn.json'))
 const StickerVenox = JSON.parse(fs.readFileSync('./lib/database/autoreply/sticker.json'))
 const ImageVenox = JSON.parse(fs.readFileSync('./lib/database/autoreply/image.json'))
@@ -100,7 +99,8 @@ const ZipVenox = JSON.parse(fs.readFileSync('./lib/database/autoreply/zip.json')
 const ApkVenox = JSON.parse(fs.readFileSync('./lib/database/autoreply/apk.json'))
 
 
-//============= GLOBAL DATABASE ===============//
+
+
 global.db.data = JSON.parse(fs.readFileSync("./lib/database/database.json"));
 if (global.db.data)
   global.db.data = {
@@ -135,13 +135,13 @@ if (time2 < "05:00:00") {
 } else {
   nowtime = 'Good night 🌌';
 }
-//
-//
+
+
 const timestampe = speed();
 const latensie = speed() - timestampe
 
 
-// ===== MODULE.EXPORTS ===== //
+
 module.exports = Venox = async (Venox, m, msg, chatUpdate, store) => {
     try {
         const {
@@ -201,10 +201,8 @@ module.exports = Venox = async (Venox, m, msg, chatUpdate, store) => {
         expiredCheck(Venox, m, premium);
 
 
-
-// ============ REPLY MSG ========== //
+    
 let myreply = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "displayName": "IRIS-MD","vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=8801853262586:8801853262586\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" };
-
 const irisreply = (teks) => {
        Venox.sendMessage(m.chat, { text: teks, contextInfo: { externalAdReply: {
          title: global.botname,
@@ -216,7 +214,11 @@ const irisreply = (teks) => {
          renderLargerThumbnail: false,
          thumbnailUrl: `https://i.ibb.co/G35jn3J/bot2p.jpg` }}}, { quoted: myreply });
     };
-// ============ BUG REPLY ============ //
+
+
+
+
+
 const venoxium = (texto) => {
 Venox.sendMessage(from, { text: texto, mentions: [sender]}, {quoted: m }).catch(e => {
 return reply("Erro..")
@@ -231,7 +233,7 @@ const follow_venox = {
 },
 message: {
 "listResponseMessage": {
-title: `Base By XeonSama`
+title: `Base By VenoxSenpai`
 }}
 }
 
@@ -244,7 +246,9 @@ caption: `${venoxy + venoxtext1}`,
 }, {quoted: follow_venox })
 }
 
-// ======== ANTILINK STUFF ========= //
+
+
+
 let chats = global.db.data.chats[from];
       if (typeof chats !== "object") global.db.data.chats[from] = {};
       if (chats) {
@@ -254,8 +258,9 @@ let chats = global.db.data.chats[from];
         global.db.data.chats[from] = {
           antilink: false,
           antilinkgc: false,
-        };
-// =============== //
+};
+
+
 if (antilink) {
   var rondonxk = '[-a-zA-Z0-9@:%._+~#=].[-a-zA-Z0-9@:%._+~#=].[-a-zA-Z0-9()@:%_+.~#?&/=]';
   if (budy.includes("https://") || budy.includes("http://")) {
@@ -279,7 +284,9 @@ if (antilink) {
     await Venox.sendMessage(from, { text: `\`\`\`「  Antilink System  」\`\`\`\n\n*⚠️ Group link detected!*\n\n*🚫@${kice.split("@")[0]} You are not allowed to send any links in this group!*\n`, contextInfo: { mentionedJid: [kice] } }, { quoted: m });
   }
 }
-// ====== LOADING ====== //
+
+
+
 async function loading() {
     var loadingSteps = [
         "```🍀 Initializing...```",
@@ -297,7 +304,8 @@ async function loading() {
         await Venox.sendMessage(from, { text: loadingSteps[i], edit: key });
     }
 }
-// ======== RANDOM MSGS ========== //
+
+
 const pickRandom = (arr) => {
   return arr[Math.floor(Math.random() * arr.length)];
 };
@@ -305,7 +313,7 @@ const pickRandom = (arr) => {
 const smallinput = budy.toLowerCase();
 
 const greetings = {
-  'hello': `🌟 Hello ${pushname}, I am ${BotName}. How can I assist you today? 🤖`,
+  'hello': `🌟 Hello ${pushname}, I am ${botname}. How can I assist you today? 🤖`,
   'hi': `🌈 Hi ${pushname}, did it hurt? When you fell from heaven? 😊`,
   'hey': `🌼 Hey there ${pushname}, are you a magician? Because whenever I look at you, everyone else disappears. 🎩✨`,
   'how are you': `🌟 Hey ${pushname}, do you believe in love at first sight, or should I walk by again? 😏`,
@@ -326,8 +334,9 @@ for (const [keyword, response] of Object.entries(greetings)) {
     break;
   }
 }
-// ======= OTHER STUFF ====== //
- if (!Venox.public) {
+
+
+f (!Venox.public) {
  if (!isCreator && !m.key.fromMe) return
 }
 
@@ -362,8 +371,9 @@ list.push({
 	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await Venox.getName(i)}\nFN:${await Venox.getName(i)}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click here to chat\nitem2.EMAIL;type=INTERNET:${ytname}\nitem2.X-ABLabel:YouTube\nitem3.URL:${socialm}\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${location};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 	    })
 }
-//----------------------------------------------------------------------------------------------------
- if (m.message && m.isGroup) {
+
+
+if (m.message && m.isGroup) {
             console.log(chalk.cyan(`\n< ================================================== >\n`))
 			console.log(chalk.green(`Group Chat:`))
             console.log(chalk.black(chalk.bgWhite('[ MESSAGE ]')), chalk.black(chalk.bgGreen(new Date)), chalk.black(chalk.bgBlue(budy || m.mtype)) + '\n' + chalk.magenta('=> From'), chalk.green(pushname), chalk.yellow(m.sender) + '\n' + chalk.blueBright('=> In'), chalk.green(groupName, m.chat))
@@ -380,8 +390,9 @@ list.push({
             }
             cmdadd()
             const totalhit = JSON.parse(fs.readFileSync('./lib/database/total-hit-user.json'))[0].hit_cmd
-        }
-//----------------------------------------------------------------------------------------------------
+}
+
+
 this.game = this.game || {};
 let room = Object.values(this.game).find(room => room.id && room.game && room.state && room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender) && room.state === 'PLAYING');
 
@@ -444,7 +455,12 @@ if (room) {
     delete this.game[room.id];
   }
 }
-//----------------------------------------------------------------------------------------------------
+
+
+
+
+
+
 for (let botto of venoxaudio) {
   if (budy === botto) {
     try {
@@ -540,9 +556,10 @@ if (m.isGroup && !m.key.fromMe) {
                 _afk.splice(afk.getAfkPosition(m.sender, _afk), 1)
                 fs.writeFileSync('./lib/database/afk-user.json', JSON.stringify(_afk))
                 Venox.sendTextWithMentions(m.chat, `@${m.sender.split('@')[0]} have returned from afk`, m)
-            }
-        }
-// ======================= MAIN CASES =========================== //
+          }
+}
+
+
 const nsfwCommands = {
   'ahegao': 'ahegao.json',
   'ass': 'ass.json',
@@ -570,7 +587,7 @@ const nsfwCommands = {
   'tentacles': 'tentacles.json',
   'thighs': 'thighs.json'
 };
-//----------------------------------------------------------------------------------------------------
+
 for (let command in nsfwCommands) {
   switch (command) {
     case 'ahegao':
@@ -628,17 +645,16 @@ for (let command in nsfwCommands) {
       }
       break;
 
-    default:
-      if (isBan || isBanChat || !m.isGroup || !AntiNsfw) return;
-      Venox.sendMessage(from, { react: { text: "🥵", key: m.key } });
+    
+default:
+  if (isBan || isBanChat || !m.isGroup || !AntiNsfw) return;
+  Venox.sendMessage(from, { react: { text: "🥵", key: m.key } });
 
-      var nsfwdata = JSON.parse(fs.readFileSync(`./lib/media/nsfw/${nsfwCommands[command]}`));
-      var venoxresult = pickRandom(nsfwdata);
-      Venox.sendMessage(m.chat, { caption: mess.done, image: { url: venoxresult.url } }, { quoted: m });
-      break;
-  }
-}
-//----------------------------------------------------------------------------------------------------
+  var nsfwdata = JSON.parse(fs.readFileSync(`./lib/media/nsfw/${nsfwCommands[command]}`));
+  var venoxresult = pickRandom(nsfwdata);
+  Venox.sendMessage(m.chat, { caption: mess.done, image: { url: venoxresult.url } }, { quoted: m });
+  break;
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'setprefix': {
     if (isBan) return reply(mess.banned);
     if (isBanChat) return reply(mess.bangc);
@@ -657,46 +673,37 @@ case 'setprefix': {
             return irisreply(`An error occurred while changing the prefix. Please try again later.`);
         }
     }
-    break;
-}
+} break;
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+case 'restart':
+  await Venox.sendMessage(from, { react: { text: "⚙", key: m.key } });
+  if (!isCreator) return reply(mess.owner);
 
-//----------------------------------------------------------------------------------------------------
+  await Venox.sendMessage(from, { text: mess.wait });
+  await Venox.sendMessage(from, { react: { text: "✅", key: m.key } });
+  await Venox.sendMessage(from, { text: 'Restarting Success!' });
+  pm2.restart('index', (err) => {
+    if (err) {
+      Venox.sendMessage(from, { react: { text: "❌", key: m.key } });
+      Venox.sendMessage(from, { text: 'Restarting Failed!' });
+    } else {
+      return;
+    }
+  });
+  break;
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+case 'shutdown':
+case 'sleep':
+  if (!isCreator) return reply(mess.owner);
+  if (isBanChat) return reply(mess.bangc);
+  await Venox.sendMessage(from, { react: { text: "⚠️", key: m.key } });
 
-case 'restart': {
-    await Venox.sendMessage(from, { react: { text: "⚙", key: m.key } });
-    if (!isCreator) return reply(mess.owner);
-
-    await Venox.sendMessage(from, { text: mess.wait });
-    await Venox.sendMessage(from, { react: { text: "✅", key: m.key } });
-    await Venox.sendMessage(from, { text: 'Restarting Success!' });
-    pm2.restart('index', (err) => {
-        if (err) {
-            Venox.sendMessage(from, { react: { text: "❌", key: m.key } });
-            Venox.sendMessage(from, { text: 'Restarting Failed!' });
-        } else {
-            return;
-        }
-    });
-    break;
-}
-	    
-//----------------------------------------------------------------------------------------------------
-	    
-case 'shutdown': case 'sleep': {
-
-    if (!isCreator) return reply(mess.owner)
-    if (isBanChat) return reply(mess.bangc);
-    await Venox.sendMessage(from, { react: { text: "⚠️", key: m.key } })
-
-    irisreply(`Tata its time to sleep!`)
-    await sleep(5000)
-    process.exit()
-    break;
-}
-	    
-//----------------------------------------------------------------------------------------------------
-	    
-   case 'mode': {
+  irisreply(`Tata its time to sleep!`);
+  await sleep(5000);
+  process.exit();
+  break;
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+case 'mode': {
 	if (isBan) return reply(mess.banned);
         if (isBanChat) return reply(mess.bangc);
         if (!isCreator) return irisreply(mess.owner);
@@ -715,9 +722,7 @@ case 'shutdown': case 'sleep': {
         }
     }
     break;
-	    
-// ----------------------------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'autotyping':
 case 'auto-typing': {
 
@@ -746,9 +751,7 @@ case 'auto-typing': {
     }
     }
     break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'autorecord':
 case 'auto-recording':
 
@@ -776,30 +779,7 @@ case 'auto-recording':
         return irisreply(`Usage: \`${global.prefa[0]}autorecord [on/off]\``);
     }
     break;
-	    
-//----------------------------------------------------------------------------------
-	    
-case 'addprem':
-    if (isBan) return irisreply(mess.banned);
-    if (isBanChat) return irisreply(mess.bangc);
-    if (!isCreator) return irisreply(mess.owner);
-     Venox.sendMessage(from, { react: { text: '❤', key: m.key } });
-
-    if (args.length < 2)
-        return irisreply(`Use :\n*#addprem* @tag time\n*#addprem* number time\n\nExample : #addprem @tag 30d`);
-    if (m.mentionedJid.length !== 0) {
-        for (let i = 0; i < m.mentionedJid.length; i++) {
-            addPremiumUser(m.mentionedJid[0], args[1], premium);
-        }
-        irisreply("Premium Success");
-    } else {
-        addPremiumUser(args[0] + "@s.whatsapp.net", args[1], premium);
-        irisreply("Success");
-    }
-    break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'delprem':
     if (!isCreator) return irisreply(mess.owner);
     if (isBan) return irisreply(mess.banned);
@@ -819,9 +799,7 @@ case 'delprem':
         irisreply("Success");
     }
     break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'listprem':
     if (!isCreator) return irisreply(mess.owner);
     if (isBan) return irisreply(mess.banned);
@@ -841,9 +819,7 @@ case 'listprem':
         quoted: m
     });
     break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'join':
     try {
         if (!isCreator) return irisreply(mess.owner);
@@ -860,9 +836,7 @@ case 'join':
         irisreply('Failed to join the Group');
     }
     break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'autoswview':
 case 'autostatusview':
     {
@@ -881,9 +855,7 @@ case 'autostatusview':
         }
     }
     break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'autobio':
     {
         if (!isCreator) return irisreply(mess.owner);
@@ -904,9 +876,7 @@ case 'autobio':
         }
     }
     break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'setexif': {
     if (!isCreator) return irisreply(mess.owner);
     if (isBan) return irisreply(mess.banned);
@@ -919,9 +889,7 @@ case 'setexif': {
     irisreply(`Exif successfully changed to\n\n• Packname : ${global.packname}\n• Author : ${global.author}`);
 }
 break;
-
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'setppbot':
 {
     if (!isCreator) return irisreply(mess.owner);
@@ -963,9 +931,7 @@ case 'setppbot':
     }
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'block':
 {
     if (!isCreator) return irisreply(mess.owner);
@@ -977,9 +943,7 @@ case 'block':
     await Venox.updateBlockStatus(blockw, 'block').then((res) => irisreply(json(res))).catch((err) => irisreply(json(err)));
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'unblock':
 {
     if (!isCreator) return irisreply(mess.owner);
@@ -991,9 +955,7 @@ case 'unblock':
     await Venox.updateBlockStatus(blockww, 'unblock').then((res) => irisreply(json(res))).catch((err) => irisreply(json(err)));
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'leave': {
     if (!isCreator) return replygcxeon(mess.owner);
     if (!m.isGroup) return replygcxeon(mess.group);
@@ -1001,20 +963,18 @@ case 'leave': {
     if (isBanChat) return irisreply(mess.bangc);
     Venox.sendMessage(from, { react: { text: '⛩️', key: m.key } });
 	
-    irisreply('Bye Everyone, i will miss y'all 🥺');
+    irisreply('Bye Everyone, i will miss yall 🥺');
     await Venox.groupLeave(m.chat);
     }
     break;
-	    
-//----------------------------------------------------------------------------------
-	    
-case 'backup': {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+case 'backup':
     if (!isCreator) return irisreply(mess.owner);
     if (m.isGroup) return irisreply(mess.private);
     if (isBan) return irisreply(mess.banned);
     if (isBanChat) return irisreply(mess.bangc);
     Venox.sendMessage(from, { react: { text: '⛩️', key: m.key } });
-	
+    
     irisreply(mess.wait);
     exec('zip backup.zip *');
     let malas = await fs.readFileSync('./backup.zip');
@@ -1026,16 +986,13 @@ case 'backup': {
         quoted: m
     });
     break;
-}
-	    
-//----------------------------------------------------------------------------------
-	    
- case 'bcgroup': {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+case 'bcgroup':
     if (!isCreator) return irisreply(mess.owner);
     if (isBan) return irisreply(mess.banned);
     if (isBanChat) return irisreply(mess.bangc);
     Venox.sendMessage(from, { react: { text: '⛩️', key: m.key } });
-	 
+    
     if (!text) return irisreply(`Which text?\n\nExample : ${prefix + command} It's holiday tomorrow `);
     let getGroups = await Venox.groupFetchAllParticipating();
     let groups = Object.entries(getGroups).slice(0).map(entry => entry[1]);
@@ -1061,12 +1018,9 @@ case 'backup': {
     }
     irisreply(`Successfully Sent Broadcast To ${anu.length} Group`);
     break;
-}
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'delete':
-case 'del': {
+case 'del':
     if (!isCreator) return irisreply(mess.done);
     if (isBan) return irisreply(mess.banned);
     if (isBanChat) return irisreply(mess.bangc);
@@ -1084,10 +1038,7 @@ case 'del': {
         }
     });
     break;
-}
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'closetime':
 {
     if (!m.isGroup) return irisreply(mess.group);
@@ -1118,9 +1069,7 @@ case 'closetime':
     }, timer);
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'opentime':
 {
     if (!m.isGroup) return irisreply(mess.group);
@@ -1151,9 +1100,7 @@ case 'opentime':
     }, timer);
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'kick':
 {
     if (!m.isGroup) return irisreply(mess.group);
@@ -1167,9 +1114,7 @@ case 'kick':
     await Venox.groupParticipantsUpdate(m.chat, [blockwww], 'remove').then((res) => irisreply(json(res))).catch((err) => irisreply(json(err)));
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'add':
 {
     if (!m.isGroup) return irisreply(mess.group);
@@ -1183,9 +1128,7 @@ case 'add':
     await Venox.groupParticipantsUpdate(m.chat, [blockwwww], 'add').then((res) => irisreply(json(res))).catch((err) => irisreply(json(err)));
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'promote':
 {
     if (!m.isGroup) return irisreply(mess.group);
@@ -1199,9 +1142,7 @@ case 'promote':
     await Venox.groupParticipantsUpdate(m.chat, [blockwwwww], 'promote').then((res) => irisreply(json(res))).catch((err) => irisreply(json(err)));
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'demote':
 {
     if (!m.isGroup) return irisreply(mess.group);
@@ -1215,9 +1156,7 @@ case 'demote':
     await Venox.groupParticipantsUpdate(m.chat, [blockwwwwwa], 'demote').then((res) => irisreply(json(res))).catch((err) => irisreply(json(err)));
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'setgcname':
 case 'setsubject':
 {
@@ -1234,9 +1173,7 @@ case 'setsubject':
     await Venox.groupUpdateSubject(m.chat, text).then((res) => irisreply(mess.success)).catch((err) => irisreply(json(err)));
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'setdesc':
 case 'setgcdesk':
 {
@@ -1253,9 +1190,7 @@ case 'setgcdesk':
     await Venox.groupUpdateDescription(m.chat, text).then((res) => irisreply(mess.success)).catch((err) => irisreply(json(err)));
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'setgcpic':
 case 'setppgc':
 {
@@ -1298,9 +1233,7 @@ case 'setppgc':
     }
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'tagall':
 {
     if (!m.isGroup) return irisreply(mess.group);
@@ -1323,9 +1256,7 @@ case 'tagall':
     });
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'hidetag':
 {
     if (!m.isGroup) return irisreply(mess.group);
@@ -1343,9 +1274,7 @@ case 'hidetag':
     });
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'totag':
 {
     if (!m.isGroup) return irisreply(mess.group);
@@ -1362,9 +1291,7 @@ case 'totag':
     });
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'group':
 {
     if (!m.isGroup) return irisreply(mess.group);
@@ -1383,9 +1310,7 @@ case 'group':
     }
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'editinfo':
 {
     if (!m.isGroup) return irisreply(mess.group);
@@ -1404,9 +1329,7 @@ case 'editinfo':
     }
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'linkgroup':
 case 'grouplink':
 case 'linkgc':
@@ -1425,9 +1348,7 @@ case 'linkgc':
     });
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'revoke':
 case 'resetlink':
 {
@@ -1444,11 +1365,8 @@ case 'resetlink':
         }).catch((err) => irisreply(json(err)));
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'ping':
-{
     if (isBan) return irisreply(mess.banned);
     if (isBanChat) return irisreply(mess.bangc);
     if (isBan) return irisreply(mess.banned);
@@ -1471,11 +1389,8 @@ case 'ping':
         quoted: m
     });
     break;
-}
-	    
-//----------------------------------------------------------------------------------
-	    
-case 'runtime': {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+case 'runtime':
     if (isBan) return irisreply(mess.banned);
     if (isBanChat) return irisreply(mess.bangc);
     Venox.sendMessage(from, { react: { text: '⛩️', key: m.key } });
@@ -1499,10 +1414,7 @@ case 'runtime': {
         quoted: m
     });
     break;
-}
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'owner': {
     if (isBan) return irisreply(mess.banned);
     if (isBanChat) return irisreply(mess.bangc);
@@ -1526,9 +1438,7 @@ case 'owner': {
     });
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'sticker':
 case 'stiker':
 case 's': {
@@ -1557,9 +1467,7 @@ case 's': {
     }
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'smeme': {
     if (isBan) return irisreply(mess.banned);
     if (isBanChat) return irisreply(mess.bangc);
@@ -1581,9 +1489,7 @@ case 'smeme': {
     fs.unlinkSync(pop);
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'swm': 
 case 'steal': 
 case 'stickerwm': 
@@ -1611,9 +1517,7 @@ case 'take': {
     }
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'toimage':
 case 'toimg': {
     if (isBan) return irisreply(mess.banned);
@@ -1633,9 +1537,7 @@ case 'toimg': {
     });
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'tomp4':
 case 'tovideo': {
     if (isBan) return irisreply(mess.banned);
@@ -1657,9 +1559,7 @@ case 'tovideo': {
     await fs.unlinkSync(media);
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'toaud':
 case 'toaudio': {
     if (isBan) return irisreply(mess.banned);
@@ -1678,9 +1578,7 @@ case 'toaudio': {
     });
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'tomp3': {
     if (isBan) return irisreply(mess.banned);
     if (isBanChat) return irisreply(mess.bangc);
@@ -1699,10 +1597,8 @@ case 'tomp3': {
     });
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
-case 'alive': {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+case 'alive':
     if (isBan) return irisreply(mess.banned);
     if (isBanChat) return irisreply(mess.bangc);
     Venox.sendMessage(from, { react: { text: '⛩️', key: m.key } });
@@ -1730,11 +1626,8 @@ case 'alive': {
         quoted: myreply,
     });
 
-    break;
-}
-	    
-//----------------------------------------------------------------------------------
-	    
+   break;
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'buypremium': {
     if (isBan) return irisreply(mess.banned);
     if (isBanChat) return irisreply(mess.bangc);
@@ -1744,9 +1637,7 @@ case 'buypremium': {
     await Venox.sendMessage(m.chat, { text: msg, contextInfo: { externalAdReply: { showAdAttribution: true, title: `global.botname`, body: `global.ownername`, thumbnailUrl: 'https://i.ibb.co/Z65xq3Z/buyprem.png', sourceUrl: global.link, mediaType: 1, renderLargerThumbnail: true } } }, { quoted: m });
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'tovn':
 case 'toptt': {
     if (isBan) return irisreply(mess.banned);
@@ -1760,9 +1651,7 @@ case 'toptt': {
     Venox.sendMessage(m.chat, { audio: audio, mimetype: 'audio/mpeg', ptt: true }, { quoted: m });
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'togif': {
     if (isBan) return irisreply(mess.banned);
     if (isBanChat) return irisreply(mess.bangc);
@@ -1775,9 +1664,7 @@ case 'togif': {
     await fs.unlinkSync(media);
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'tourl': {
     if (isBan) return irisreply(mess.banned);
     if (isBanChat) return irisreply(mess.bangc);
@@ -1795,9 +1682,7 @@ case 'tourl': {
     await fs.unlinkSync(media);
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'emojimix': {
     if (isBan) return irisreply(mess.banned);
     if (isBanChat) return irisreply(mess.bangc);
@@ -1817,9 +1702,7 @@ case 'emojimix': {
     }
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'vv':
 case 'toviewonce': {
     if (isBan || isBanChat) return irisreply(isBan ? mess.banned : mess.bangc);
@@ -1833,9 +1716,7 @@ case 'toviewonce': {
     }
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'toqr': {
     if (isBan) return irisreply(mess.banned);
     if (isBanChat) return irisreply(mess.bangc);
@@ -1858,9 +1739,7 @@ case 'toqr': {
     }, 10000);
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'fliptext': {
     if (isBan) return irisreply(mess.banned);
     if (isBanChat) return irisreply(mess.bangc);
@@ -1872,9 +1751,7 @@ case 'fliptext': {
     irisreply(`\`\`\`「 FLIP TEXT 」\`\`\`\n*•> Normal :*\n${quere}\n*•> Flip :*\n${flipe}`);
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'listvn': {
     if (isBan) return irisreply(mess.banned);
     if (isBanChat) return irisreply(mess.bangc);
@@ -1887,9 +1764,7 @@ case 'listvn': {
     irisreply(teks);
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'liststicker': {
     if (isBan) return irisreply(mess.banned);
     if (isBanChat) return irisreply(mess.bangc);
@@ -1902,9 +1777,7 @@ case 'liststicker': {
     irisreply(teks);
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'listimage': {
     if (isBan) return irisreply(mess.banned);
     if (isBanChat) return irisreply(mess.bangc);
@@ -1917,9 +1790,7 @@ case 'listimage': {
     irisreply(teks);
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'listvideo': {
     if (isBan) return irisreply(mess.banned);
     if (isBanChat) return irisreply(mess.bangc);
@@ -1932,9 +1803,7 @@ case 'listvideo': {
     irisreply(teks);
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'afk': {
     if (isBan) return irisreply(mess.banned);
     if (isBanChat) return irisreply(mess.bangc);
@@ -1947,9 +1816,7 @@ case 'afk': {
     irisreply(`@${m.sender.split('@')[0]} Currently AFK\nWith reason: ${reason}`);
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'myip':
 case 'ipbot': {
 
@@ -1973,11 +1840,9 @@ case 'ipbot': {
     );
     }
     break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'repo':
-case 'repository': {
+case 'repository':
     try {
         const [, username, repoName] = botscript.match(
             /github\.com\/([^/]+)\/([^/]+)/
@@ -2009,10 +1874,7 @@ case 'repository': {
         await Venox.relayMessage(m.chat, { text: `Repository currently not available` });
     }
     break;
-}
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'sc':
 case 'script':
 case 'scriptbot':
@@ -2052,10 +1914,9 @@ case 'scriptbot':
         });
 
     break;
-	    
-//----------------------------------------------------------------------------------
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'server':
-case 'sysinfo': {
+case 'sysinfo':
     if (isBan) return Venox.reply(mess.banned);
     if (isBanChat) return Venox.reply(mess.bangc);
     const used = process.memoryUsage();
@@ -2093,10 +1954,7 @@ ${runtime(process.uptime())}
 
     irisreply(response);
     break;
-}
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'ban': {
     if (isBan) return irisreply(mess.banned);
     if (isBanChat) return irisreply(mess.bangc);
@@ -2130,9 +1988,7 @@ case 'ban': {
     }
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'ttc':
 case 'ttt':
 case 'tictactoe': {
@@ -2187,11 +2043,9 @@ case 'tictactoe': {
     }
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'report':
-case 'suggest': {
+case 'suggest':
     if (isBan) return Venox.sendMessage(from, mess.banned);
     if (isBanChat) return Venox.sendMessage(from, mess.bangc);
     if (!text) return Venox.sendMessage(from, `Please provide a report message.`);
@@ -2209,10 +2063,7 @@ case 'suggest': {
 
     irisreply(`*✅ Your report has been submitted successfully to the support group & owner.*\n\n*You will get a response shortly... ♥️*`);
     break;
-}
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'dice':
 case 'roll': {
     if (isBan) return Venox.sendMessage(from, mess.banned);
@@ -2223,9 +2074,7 @@ case 'roll': {
     irisreply(diceMessage);
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'flipcoin':
 case 'coin': {
     if (isBan) return Venox.sendMessage(from, mess.banned);
@@ -2236,9 +2085,7 @@ case 'coin': {
     irisreply(flipCoinMessage);
 }
 break;
-	    
-//----------------------------------------------------------------------------------
-	    
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'rps': {
     if (isBan) return Venox.sendMessage(from, mess.banned);
     if (isBanChat) return Venox.sendMessage(from, mess.bangc);
@@ -2265,8 +2112,7 @@ case 'rps': {
     irisreply(`You chose ${userMove}. IrisBot chose ${botMove}. ${result}`);
 }
 break;
-	    
-//----------------------------------------------------------------------------------
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'listonline': case 'listaktif': case 'here': {
         if (isBan) return reply(mess.banned);
         if (isBanChat) return reply(mess.bangc);
@@ -2278,8 +2124,8 @@ case 'listonline': case 'listaktif': case 'here': {
         let liston = 1
         Venox.sendText(m.chat, '  「 *Online Members* 」\n\n' + online.map(v => `${liston++} . @` + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
       }
-        break;  
-//----------------------------------------------------------------------------------
+        break;
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'happymod': case 'modapk': {
         if (isBan) return reply(mess.banned);
         if (isBanChat) return reply(mess.bangc);
@@ -2308,7 +2154,7 @@ case 'happymod': case 'modapk': {
         });
       }
         break;
-//----------------------------------------------------------------------------------
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 case 'tagadmins': case 'admins': {
         if (isBan) return reply(mess.banned);
         if (isBanChat) return reply(mess.bangc);
@@ -2805,7 +2651,7 @@ case 'igtv': {
   });
 }
 break;
-//----------------------------------------------------------------------------------
+ //----------------------------------------------------------------------------------
 case 'twitter':
 case 'td':
 case 'twitterdl': {
@@ -3583,7 +3429,7 @@ case 'demoteall': {
 break;
 //-------------------------------< EVERY-MENUS >----------------------------------
 case 'menu':
-case 'help': {
+case 'help':
     if (isBan) return reply(mess.banned);
     if (isBanChat) return reply(mess.bangc);
     Venox.sendMessage(from, { react: { text: "✨", key: m.key } });
@@ -3697,10 +3543,9 @@ Reply with prefix for desired menu! *${prefix}toolmenu* 🎁`;
 
     await Venox.sendMessage(m.chat, msg, { quoted: m });
     break;
-}
-//-------------------------------< EVERY-MENUS >----------------------------------
+//----------------------------------------------------------------------------------
 case '1.1':
-case 'toolmenu': {
+case 'toolmenu':
     if (isBan) return reply(mess.banned);
     if (isBanChat) return reply(mess.bangc);
     Venox.sendMessage(from, { react: { text: "🎁", key: m.key } });
@@ -3734,10 +3579,9 @@ await Venox.sendMessage(from, {
     });
     
     break;
-}
 //-------------------------------< EVERY-MENUS >----------------------------------
 case '1.2':
-case 'downloadermenu': {
+case 'downloadermenu':
     if (isBan) return reply(mess.banned);
     if (isBanChat) return reply(mess.bangc);
     Venox.sendMessage(from, { react: { text: "🎁", key: m.key } });
@@ -3771,10 +3615,9 @@ await Venox.sendMessage(from, {
     });
     
     break;
-}
 //-------------------------------< EVERY-MENUS >----------------------------------
 case '1.3':
-case 'groupmenu': {
+case 'groupmenu':
     if (isBan) return reply(mess.banned);
     if (isBanChat) return reply(mess.bangc);
     Venox.sendMessage(from, { react: { text: "🎁", key: m.key } });
@@ -3808,10 +3651,9 @@ await Venox.sendMessage(from, {
     });
     
     break;
-}
 //-------------------------------< EVERY-MENUS >----------------------------------
 case '1.4':
-case 'ownermenu': {
+case 'ownermenu':
     if (isBan) return reply(mess.banned);
     if (isBanChat) return reply(mess.bangc);
     Venox.sendMessage(from, { react: { text: "🎁", key: m.key } });
@@ -3845,10 +3687,9 @@ await Venox.sendMessage(from, {
     });
     
     break;
-}
 //-------------------------------< EVERY-MENUS >----------------------------------
 case '1.5':
-case 'animemenu': {
+case 'animemenu':
     if (isBan) return reply(mess.banned);
     if (isBanChat) return reply(mess.bangc);
     Venox.sendMessage(from, { react: { text: "🎁", key: m.key } });
@@ -3882,10 +3723,9 @@ await Venox.sendMessage(from, {
     });
     
     break;
-}
 //-------------------------------< EVERY-MENUS >----------------------------------
 case '1.6':
-case 'aimenu': {
+case 'aimenu':
     if (isBan) return reply(mess.banned);
     if (isBanChat) return reply(mess.bangc);
     Venox.sendMessage(from, { react: { text: "🎁", key: m.key } });
@@ -3919,10 +3759,9 @@ await Venox.sendMessage(from, {
     });
     
     break;
-}
 //-------------------------------< EVERY-MENUS >----------------------------------
 case '1.7':
-case 'mainmenu': {
+case 'mainmenu':
     if (isBan) return reply(mess.banned);
     if (isBanChat) return reply(mess.bangc);
     Venox.sendMessage(from, { react: { text: "🎁", key: m.key } });
@@ -3956,10 +3795,9 @@ await Venox.sendMessage(from, {
     });
     
     break;
-}
 //-------------------------------< EVERY-MENUS >----------------------------------
 case '1.8':
-case 'funmenu': {
+case 'funmenu':
     if (isBan) return reply(mess.banned);
     if (isBanChat) return reply(mess.bangc);
     Venox.sendMessage(from, { react: { text: "🎁", key: m.key } });
@@ -3993,10 +3831,9 @@ await Venox.sendMessage(from, {
     });
     
     break;
-}
 //-------------------------------< EVERY-MENUS >----------------------------------
 case '1.9':
-case 'bugmenu': {
+case 'bugmenu':
     if (isBan) return reply(mess.banned);
     if (isBanChat) return reply(mess.bangc);
     Venox.sendMessage(from, { react: { text: "🎁", key: m.key } });
@@ -4030,10 +3867,9 @@ await Venox.sendMessage(from, {
     });
     
     break;
-}
 //-------------------------------< EVERY-MENUS >----------------------------------
 case '2.0':
-case 'nsfwmenu': {
+case 'nsfwmenu':
     if (isBan) return reply(mess.banned);
     if (isBanChat) return reply(mess.bangc);
     if (!AntiNsfw) return reply(mess.nonsfw);
@@ -4069,7 +3905,6 @@ await Venox.sendMessage(from, {
     });
     
     break;
-}
 //-------------------------------< CASE >----------------------------------
  case 'nsfw': {
         if (isBan) return reply(mess.banned);
@@ -4106,7 +3941,6 @@ case 'weather':
 
         break;
 //-------------------------------
-//-------------------------------
  case '':
    if (isCmd) {
    if (isBan) return reply(mess.banned);
@@ -4116,7 +3950,6 @@ case 'weather':
    reply(`Do you need any help ${pushname} ? Type *${prefix}help* to get my full command list.`)
   }
   break;
-//-------------------------------
 //-------------------------------
 default:
 
