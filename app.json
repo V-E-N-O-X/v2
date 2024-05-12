@@ -1,14 +1,71 @@
 {
-  "name": "sp",
+  "name": "whatsapp-bot (IRIS-MD)",
   "version": "2.0.9",
   "description": "A modular advanced wabot",
-  "keywords": ["sp"],
+  "repository": "https://github.com/V-E-N-O-X/v2",
+  "keywords": ["whatsapp-bot"],
+  "stack": "container",
   "env": {
-    "SESSION_ID": {
-      "description": "Session Id",    
-      "value": "",
-      "required" :true
-    }  
+     "SESSION_ID": {
+       "description": "ᴘᴀsᴛᴇ ᴜʀ sᴇssɪᴏɴ ɪᴅ ʜᴇʀᴇ!",    
+       "value": "",
+       "required": true
+    }
+     "SUDO": {
+       "description": "ᴇɴᴛᴇʀ ᴜʀ ᴏᴡɴᴇʀ-ɴᴜᴍʙᴇʀ ᴡɪᴛʜᴏᴜᴛ (+) ʙᴜᴛ ɪɴ ɪɴᴛᴇʀɴᴀᴛɪᴏɴᴀʟ ꜰᴏʀᴍ!",
+       "value": "",
+       "required": true
+    }
+     "PREFIX": {
+       "description": "ᴇɴᴛᴇʀ ᴜʀ ʙᴏᴛ-ᴘʀᴇꜰɪx!",
+       "value": "",
+       "required": true
+    }
+     "MONGO_URL": {
+       "description": "ᴇɴᴛᴇʀ ᴜʀ ᴍᴏɴɢᴏᴅʙ sᴛʀɪɴɢ! || ( ᴏᴘᴛɪᴏɴᴀʟ )",
+       "value": "",
+       "required": false
+    }
+     "ALIVE_MSG": {
+       "description": "ᴇɴᴛᴇʀ ᴜʀ ᴀʟɪᴠᴇ-ᴍsɢ ꜰᴏʀ ʀᴇᴘʟʏ! || ( ᴏᴘᴛɪᴏɴᴀʟ )",
+       "value": "",
+       "required": false
+    }
+     "WELCOME_MSG": {
+       "description": "sᴇᴛ ɪᴛ ᴀs ᴛʀᴜᴇ / ꜰᴀʟsᴇ!",
+       "value": "false",
+       "required": true
+    }
+     "MENU_TYPES": {
+       "description": "sᴇᴛ ᴜʀ ᴍᴇɴᴜ ᴛʏᴘᴇs ʜᴇʀᴇ! ( ᴠ1 = ᴘʜᴏᴛᴏ ᴍᴇɴᴜ, ᴠ2 = ᴠɪᴅᴇᴏ ᴍᴇɴᴜ, ᴠ3 = ʙᴜᴛᴛᴏɴ+ᴘʜᴏᴛᴏ ᴍᴇɴᴜ )",
+       "value": "",
+       "required": true
+    }
+     "AUTO_STS_SEEN": {
+       "description": "sᴇᴛ ɪᴛ ᴀs ᴛʀᴜᴇ / ꜰᴀʟsᴇ!",
+       "value": "",
+       "required": true
+    }
+     "AUTO_READ_MSG": {
+       "description": "sᴇᴛ ɪᴛ ᴀs ᴛʀᴜᴇ / ꜰᴀʟsᴇ!",
+       "value": "",
+       "required": true
+    }
+     "AUTO_BIO": {
+       "description": "sᴇᴛ ɪᴛ ᴀs ᴛʀᴜᴇ / ꜰᴀʟsᴇ!",
+       "value": "",
+       "required": true
+    }
+     "BOT_NAME": {
+       "description": "ᴇɴᴛᴇʀ ʏᴏᴜʀ ʙᴏᴛ-ɴᴀᴍᴇ ʜᴇʀᴇ!",
+       "value": "",
+       "required": true
+    }
+     "OWNER_NAME": {
+       "description": "ᴇɴᴛᴇʀ ʏᴏᴜʀ ᴏᴡɴᴇʀ-ɴᴀᴍᴇ ʜᴇʀᴇ!",
+       "value": "",
+       "required": true
+    }
   },
   "buildpacks": [
     {
