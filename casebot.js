@@ -1606,7 +1606,7 @@ case 'alive':
     const alivemessage = global.alivemsg || `*ᴀ ʙᴀɪʟᴇʏs ʙᴀsᴇᴅ ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ 🌈*`;
     const alivetext = `
     ʜᴇʟʟᴏ, ${pushname}..! 🍀
-    ɪ ᴀᴍ  ${BotName}
+    ɪ ᴀᴍ  ${botname}
     
     _${alivemessage}_
     
