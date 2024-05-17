@@ -36,7 +36,7 @@ const pairingCode =   phoneNumber || false
 
 async function My_Sess(){
      exec('mkdir ' + sessionFolderPath)
-    let code = `${global.SESSION_ID  || settings.SESSION_ID  || process.env.SESSION_ID}`.replace(/24_I_R_I_S_M_D_V_2~/g, "");
+    let code = `${global.SESSION_ID  || settings.SESSION_ID  || process.env.SESSION_ID}`.replace(/IRIS-MD:>/g, "");
    if (code || !fs.existsSync(sessionPath) ) {
         if(code.length < 30){
             let { data } = await axios.get('https://paste.c-net.org/'+code)
